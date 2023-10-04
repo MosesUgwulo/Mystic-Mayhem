@@ -43,5 +43,11 @@ public class playerMovement : MonoBehaviour
         _velocity.y += gravity * Time.deltaTime; // Apply gravity
         
         controller.Move(_velocity * Time.deltaTime); // Apply gravity
+        
+        // Pressing R returns the player to the start
+        if (Input.GetKey(KeyCode.R))
+        {
+            transform.position = new Vector3(0, 9, 0);
+        }
     }
 }
