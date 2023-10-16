@@ -6,7 +6,7 @@ using UnityEngine.Windows.Speech;
 
 public class SpeechRecognition : MonoBehaviour
 {
-    public String[] words = new String[] { "Test", "Hello", "Goodbye" };
+    public String[] words = new String[] { "Test", "Hello", "Goodb e" };
     public KeywordRecognizer keywordRecognizer;
     public GameObject block;
     
