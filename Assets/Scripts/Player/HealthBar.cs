@@ -51,9 +51,7 @@ namespace Player
                     //TODO: Kill the player
                     Debug.Log("Player is dead!");
                 }
-                
             }
-            
         }
     }
 }
