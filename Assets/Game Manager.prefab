@@ -45,15 +45,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 726894ea4498c0b45a2698c11b40ad64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  id: 
   phrases:
   - fire ball
   - stop resisting
-  prefab: {fileID: 0}
+  prefab: {fileID: 5995710866260378505, guid: 18180f1022f183e43b2f9e7b914e718c, type: 3}
   manaCost: 100
-  cooldown: 10
+  cooldown: 2
   damage: 0
-  speed: 0
+  speed: 20
   timer: 0
+  lifeTime: 2
 --- !u!114 &1737358590782630119
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -66,6 +68,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36567222046df1a40b18b44f97acaf68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  id: 
   phrases:
   - Splash
   - Ripple Whisper
@@ -75,6 +78,7 @@ MonoBehaviour:
   damage: 0
   speed: 0
   timer: 0
+  lifeTime: 0
 --- !u!1 &6932450355338773108
 GameObject:
   m_ObjectHideFlags: 0
