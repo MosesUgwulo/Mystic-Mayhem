@@ -1,55 +1,71 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
+using Spells;
 using UnityEngine;
 using UnityEngine.Windows.Speech;
 
-public class SpeechRecognition : MonoBehaviour
+namespace Player
 {
-    public String[] words = new String[] { "Test", "Hello", "Goodb e" };
-    public KeywordRecognizer keywordRecognizer;
-    public GameObject block;
-    
-    private void Start()
+    public class SpeechRecognition : MonoBehaviour
     {
-        // Check if the platform supports speech recognition.
-        Debug.Log("Speech Recognition Supported: <b>" + PhraseRecognitionSystem.isSupported + "</b>");
-        if (!PhraseRecognitionSystem.isSupported)
-            return;
+        private List<MagicSystem> _spells;
+        public KeywordRecognizer keywordRecognizer;
         
-        // Subscribe to events.
-        PhraseRecognitionSystem.OnStatusChanged += (status) => Debug.Log("Status: <b>" + status + "</b>");
-        PhraseRecognitionSystem.OnError += (error) => Debug.LogError("Error: <b>" + error + "</b>");
-        
-        // Create a new keyword recognizer.
-        keywordRecognizer = new KeywordRecognizer(words);
-        keywordRecognizer.OnPhraseRecognized += OnPhraseRecognized;
-        
-        keywordRecognizer.Start();
-        
-        // Start recognition.
-        PhraseRecognitionSystem.Restart();
-        
-        
-    }
-
-    private void OnDestroy()
-    {
-        if (keywordRecognizer != null && keywordRecognizer.IsRunning)
-            keywordRecognizer.Stop();
-    }
-    
-    private void OnPhraseRecognized(PhraseRecognizedEventArgs args)
-    {
-        Debug.Log("You said: <b>" + args.text + "</b> - confidence: <b>" + args.confidence + "</b>");
-        if (args.text == "Spawn block")
+        private void Awake()
         {
-            Instantiate(block, new Vector3(0, 10, 0), Quaternion.identity);
+            // Get the MagicSystem game object from the parent of this game object.
+            GameObject magicSystem = GameObject.Find("MagicSystem");
+            
+            // Get all the Spell components in MagicSystem game object.
+            var spellsArray = magicSystem.GetComponents<MagicSystem>();
+            _spells = spellsArray.ToList();
+        }
+        
+        private void Start()
+        {
+            // Check if the platform supports speech recognition.
+            Debug.Log("Speech Recognition Supported: <b>" + PhraseRecognitionSystem.isSupported + "</b>");
+            if (!PhraseRecognitionSystem.isSupported)
+                return;
+        
+            // Subscribe to events.
+            PhraseRecognitionSystem.OnStatusChanged += (status) => Debug.Log("Status: <b>" + status + "</b>");
+            PhraseRecognitionSystem.OnError += (error) => Debug.LogError("Error: <b>" + error + "</b>");
+        
+            // Create a new keyword recognizer.
+            keywordRecognizer = new KeywordRecognizer(_spells.SelectMany(ms => ms.phrases).ToArray());
+            keywordRecognizer.OnPhraseRecognized += OnPhraseRecognized;
+        
+            keywordRecognizer.Start();
+        
+            // Start recognition.
+            PhraseRecognitionSystem.Restart();
+        
+        
         }
 
-        if (args.text == "Goodbye")
+        private void OnDestroy()
         {
-            Application.Quit();
+            if (keywordRecognizer != null && keywordRecognizer.IsRunning)
+                keywordRecognizer.Stop();
         }
+    
+        private void OnPhraseRecognized(PhraseRecognizedEventArgs args)
+        {
+            if (Input.GetKey(KeyCode.Mouse1))
+            {
+                Debug.Log("You said: <b>" + args.text + "</b> - confidence: <b>" + args.confidence + "</b>");
+            
+                // Get the spell that matches the recognized phrase.
+                MagicSystem spell = _spells.FirstOrDefault(s => s.phrases.Contains(args.text));
+                if (spell == null)
+                    return;
+            
+                // Cast the spell.
+                spell.CastSpell();
+            }
+        }
+        
     }
 }

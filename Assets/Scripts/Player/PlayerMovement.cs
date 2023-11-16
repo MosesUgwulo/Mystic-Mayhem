@@ -1,8 +1,9 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 namespace Player
 {
-    public class playerMovement : MonoBehaviour
+    public class PlayerMovement : MonoBehaviour
     {
     
         public CharacterController controller; // Character controller
@@ -16,6 +17,7 @@ namespace Player
     
         private Vector3 _velocity; // Velocity vector
         private bool _isGrounded; // Is the player grounded?
+        private bool _isChargingMana;
 
         private void Start()
         {
@@ -53,6 +55,16 @@ namespace Player
             {
                 transform.position = new Vector3(0, 9, 0);
             }
+
+            if (_isChargingMana)
+            {
+                ManaBar.Mana += 0.5f;
+            }
+        }
+
+        public void OnChargeMana(InputAction.CallbackContext ctx)
+        {
+            _isChargingMana = ctx.control.IsPressed();
         }
     }
 }

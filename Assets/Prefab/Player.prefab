@@ -11,7 +11,10 @@ GameObject:
   - component: {fileID: 2937061129243248990}
   - component: {fileID: 2652481085932714279}
   - component: {fileID: 4054478681667679374}
-  m_Layer: 0
+  - component: {fileID: 1741452275234974841}
+  - component: {fileID: 5776349702375045081}
+  - component: {fileID: 7139971058233467686}
+  m_Layer: 8
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -56,7 +59,7 @@ CharacterController:
   m_Enabled: 1
   serializedVersion: 3
   m_Height: 3
-  m_Radius: 0.6
+  m_Radius: 0.5
   m_SlopeLimit: 45
   m_StepOffset: 0.7
   m_SkinWidth: 0.08
@@ -83,6 +86,56 @@ MonoBehaviour:
   gravity: -19.62
   groundDistance: 0.4
   jumpHeight: 3
+--- !u!114 &1741452275234974841
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2523542500073184757}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f384c33a1594124b8f38f3495bdd1e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 128
+--- !u!136 &5776349702375045081
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2523542500073184757}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.6
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &7139971058233467686
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2523542500073184757}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f943aaed1672a814f8b5a60054552135, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5300276611651447088
 GameObject:
   m_ObjectHideFlags: 0
@@ -96,7 +149,7 @@ GameObject:
   - component: {fileID: 4599129950376029905}
   - component: {fileID: 8237049124383404861}
   - component: {fileID: 6054448208652908454}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: First Person Cam
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -244,7 +297,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7062530007827071742}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: GroundCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -277,7 +330,7 @@ GameObject:
   - component: {fileID: 6110294938328098956}
   - component: {fileID: 7595137200481157511}
   - component: {fileID: 3636607640289861675}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Capsule
   m_TagString: Untagged
   m_Icon: {fileID: 0}

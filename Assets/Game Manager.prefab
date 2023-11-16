@@ -1,0 +1,222 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4121790010199422996
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2612453509503937330}
+  - component: {fileID: 573065164414424905}
+  - component: {fileID: 1737358590782630119}
+  m_Layer: 0
+  m_Name: MagicSystem
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2612453509503937330
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4121790010199422996}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -385.24594, y: -14.113552, z: -337.50574}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3818647505380852562}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &573065164414424905
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4121790010199422996}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 726894ea4498c0b45a2698c11b40ad64, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  phrases:
+  - fire ball
+  - stop resisting
+  prefab: {fileID: 0}
+  manaCost: 100
+  cooldown: 10
+  damage: 0
+  speed: 0
+  timer: 0
+--- !u!114 &1737358590782630119
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4121790010199422996}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36567222046df1a40b18b44f97acaf68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  phrases:
+  - Splash
+  - Ripple Whisper
+  prefab: {fileID: 0}
+  manaCost: 50
+  cooldown: 5
+  damage: 0
+  speed: 0
+  timer: 0
+--- !u!1 &6932450355338773108
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3818647505380852562}
+  - component: {fileID: 6360068299854136629}
+  m_Layer: 0
+  m_Name: Game Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3818647505380852562
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6932450355338773108}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 385.24594, y: 14.113552, z: 337.50574}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 8868448690548879493}
+  - {fileID: 2612453509503937330}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6360068299854136629
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6932450355338773108}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a788b2637002a1a4c92d3ffae4346391, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  magicSystem: {fileID: 573065164414424905}
+  player: {fileID: 0}
+  speechRecognition: {fileID: 2852036267839235423}
+--- !u!1001 &7668446624115264074
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 3818647505380852562}
+    m_Modifications:
+    - target: {fileID: 1258972199371324111, guid: bb57dc1cba7a8b0448792d6aa5d3d19c,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -384.83
+      objectReference: {fileID: 0}
+    - target: {fileID: 1258972199371324111, guid: bb57dc1cba7a8b0448792d6aa5d3d19c,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -9.553392
+      objectReference: {fileID: 0}
+    - target: {fileID: 1258972199371324111, guid: bb57dc1cba7a8b0448792d6aa5d3d19c,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -321.74927
+      objectReference: {fileID: 0}
+    - target: {fileID: 1258972199371324111, guid: bb57dc1cba7a8b0448792d6aa5d3d19c,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1258972199371324111, guid: bb57dc1cba7a8b0448792d6aa5d3d19c,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1258972199371324111, guid: bb57dc1cba7a8b0448792d6aa5d3d19c,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1258972199371324111, guid: bb57dc1cba7a8b0448792d6aa5d3d19c,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1258972199371324111, guid: bb57dc1cba7a8b0448792d6aa5d3d19c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1258972199371324111, guid: bb57dc1cba7a8b0448792d6aa5d3d19c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1258972199371324111, guid: bb57dc1cba7a8b0448792d6aa5d3d19c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5620417897378197269, guid: bb57dc1cba7a8b0448792d6aa5d3d19c,
+        type: 3}
+      propertyPath: words.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5620417897378197269, guid: bb57dc1cba7a8b0448792d6aa5d3d19c,
+        type: 3}
+      propertyPath: words.Array.data[3]
+      value: fire ball
+      objectReference: {fileID: 0}
+    - target: {fileID: 7392033782080077713, guid: bb57dc1cba7a8b0448792d6aa5d3d19c,
+        type: 3}
+      propertyPath: m_Name
+      value: Speech
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: bb57dc1cba7a8b0448792d6aa5d3d19c, type: 3}
+--- !u!114 &2852036267839235423 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5620417897378197269, guid: bb57dc1cba7a8b0448792d6aa5d3d19c,
+    type: 3}
+  m_PrefabInstance: {fileID: 7668446624115264074}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23e0f3249df0f02439d06172d5112a91, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &8868448690548879493 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1258972199371324111, guid: bb57dc1cba7a8b0448792d6aa5d3d19c,
+    type: 3}
+  m_PrefabInstance: {fileID: 7668446624115264074}
+  m_PrefabAsset: {fileID: 0}

@@ -7,6 +7,7 @@ namespace Player
     {
         private bool _hasCollided = false;
         public LayerMask layerMask;
+        
         void Start()
         {
             
