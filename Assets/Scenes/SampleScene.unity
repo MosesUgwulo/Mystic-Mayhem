@@ -3084,6 +3084,34 @@ Transform:
   m_Children: []
   m_Father: {fileID: 863340058}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1225692508 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4121790010199422996, guid: 476ceee4f5e1457489f54cfb21671d1a,
+    type: 3}
+  m_PrefabInstance: {fileID: 7138326497989816409}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1225692512
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1225692508}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f456cadccd81d18409e7c163026f26e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 
+  phrases:
+  - goodbye
+  prefab: {fileID: 0}
+  manaCost: 0
+  cooldown: 0
+  damage: 0
+  speed: 0
+  timer: 0
+  lifeTime: 0
 --- !u!1 &1379472958
 GameObject:
   m_ObjectHideFlags: 0
@@ -3769,6 +3797,42 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 573065164414424905, guid: 476ceee4f5e1457489f54cfb21671d1a,
+        type: 3}
+      propertyPath: speed
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 573065164414424905, guid: 476ceee4f5e1457489f54cfb21671d1a,
+        type: 3}
+      propertyPath: phrases.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 573065164414424905, guid: 476ceee4f5e1457489f54cfb21671d1a,
+        type: 3}
+      propertyPath: phrases.Array.data[1]
+      value: Stop resisting
+      objectReference: {fileID: 0}
+    - target: {fileID: 1737358590782630119, guid: 476ceee4f5e1457489f54cfb21671d1a,
+        type: 3}
+      propertyPath: speed
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 1737358590782630119, guid: 476ceee4f5e1457489f54cfb21671d1a,
+        type: 3}
+      propertyPath: prefab
+      value: 
+      objectReference: {fileID: 5995710866260378505, guid: 48d50156b254a4e439640c806533a39c,
+        type: 3}
+    - target: {fileID: 1737358590782630119, guid: 476ceee4f5e1457489f54cfb21671d1a,
+        type: 3}
+      propertyPath: cooldown
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1737358590782630119, guid: 476ceee4f5e1457489f54cfb21671d1a,
+        type: 3}
+      propertyPath: lifeTime
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 3818647505380852562, guid: 476ceee4f5e1457489f54cfb21671d1a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3832,7 +3896,11 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4121790010199422996, guid: 476ceee4f5e1457489f54cfb21671d1a,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1225692512}
   m_SourcePrefab: {fileID: 100100000, guid: 476ceee4f5e1457489f54cfb21671d1a, type: 3}
 --- !u!1001 &7492703888132269562
 PrefabInstance:

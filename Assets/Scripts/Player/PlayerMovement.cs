@@ -58,7 +58,7 @@ namespace Player
 
             if (_isChargingMana)
             {
-                ManaBar.Mana += 0.5f;
+                ManaBar.Mana += 0.25f;
             }
         }
 
