@@ -16,6 +16,7 @@ namespace Spells
         public float speed;
         public float timer;
         public float lifeTime;
+        public bool hasLearned;
         public bool CanCast
         {
             get { return timer >= cooldown && ManaBar.Mana >= manaCost; }
@@ -37,6 +38,7 @@ namespace Spells
         {
             timer = cooldown;
             cam = GameManager.instance.player.GetComponentInChildren<Camera>().gameObject;
+            
         }
         
         private void Update()

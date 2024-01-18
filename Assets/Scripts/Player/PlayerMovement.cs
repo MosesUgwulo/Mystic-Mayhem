@@ -18,15 +18,33 @@ namespace Player
         private Vector3 _velocity; // Velocity vector
         private bool _isGrounded; // Is the player grounded?
         private bool _isChargingMana;
-
+        
+        private bool _isFirstFrame = true;
+        
         private void Start()
         {
-            
+            ResetPlayer();
         }
-        
+
+        public void ResetPlayer()
+        {
+            var spawnpoint = GameObject.FindGameObjectWithTag("PlayerSpawnpoint");
+            if (spawnpoint == null)
+            {
+                Debug.LogError("No spawnpoint found!");
+            }
+            else
+            {
+                controller.Move(spawnpoint.transform.position - transform.position);
+            }
+        }
+
+
         private void Update()
         {
+            
             _isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask); // Check if player is grounded
+            
         
             if (_isGrounded && _velocity.y < 0) // If player is grounded and falling
             {
@@ -40,6 +58,7 @@ namespace Player
             Vector3 movement = transformVar.right * horizontalInput + transformVar.forward * verticalInput; // Calculate movement vector
         
             controller.Move(movement * (speed * Time.deltaTime)); // Move the player
+            
 
             if (Input.GetButtonDown("Jump") && _isGrounded) // If player presses jump and is grounded
             {
@@ -49,17 +68,24 @@ namespace Player
             _velocity.y += gravity * Time.deltaTime; // Apply gravity
         
             controller.Move(_velocity * Time.deltaTime); // Apply gravity
-        
+            
             // Pressing R returns the player to the start
             if (Input.GetKey(KeyCode.R))
             {
-                transform.position = new Vector3(0, 9, 0);
+                ResetPlayer();
             }
 
             if (_isChargingMana)
             {
                 ManaBar.Mana += 0.25f;
             }
+            
+            if (_isFirstFrame)
+            {
+                _isFirstFrame = false;
+                ResetPlayer();
+            }
+            
         }
 
         public void OnChargeMana(InputAction.CallbackContext ctx)
