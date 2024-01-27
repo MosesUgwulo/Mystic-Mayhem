@@ -6,6 +6,7 @@ namespace Spells
     {
         public override void CastSpell()
         {
+            Debug.Log("Exiting Game");
             Application.Quit();
         }
     }

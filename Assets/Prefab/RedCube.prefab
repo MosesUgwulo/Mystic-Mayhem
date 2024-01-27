@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 9114725263263601032}
   - component: {fileID: 4210174415782237306}
   - component: {fileID: 1243434818193610128}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: RedCube
   m_TagString: Cell
   m_Icon: {fileID: 0}

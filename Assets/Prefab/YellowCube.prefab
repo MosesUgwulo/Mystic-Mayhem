@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 920145203993023583}
   - component: {fileID: 1481861053728474895}
   - component: {fileID: 6125043392708057616}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: YellowCube
   m_TagString: Cell
   m_Icon: {fileID: 0}

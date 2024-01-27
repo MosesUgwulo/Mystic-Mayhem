@@ -11,9 +11,12 @@ GameObject:
   - component: {fileID: 2612453509503937330}
   - component: {fileID: 573065164414424905}
   - component: {fileID: 1737358590782630119}
+  - component: {fileID: 9026731557238514688}
+  - component: {fileID: 187420504444540520}
+  - component: {fileID: 751212940973270036}
   m_Layer: 0
   m_Name: MagicSystem
-  m_TagString: Untagged
+  m_TagString: MagicSystem
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -45,17 +48,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 726894ea4498c0b45a2698c11b40ad64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: 
+  id: fire
   phrases:
-  - fire ball
-  - stop resisting
+  - Fire
+  - Flame
   prefab: {fileID: 5995710866260378505, guid: 18180f1022f183e43b2f9e7b914e718c, type: 3}
-  manaCost: 100
+  manaCost: 25
   cooldown: 2
   damage: 0
-  speed: 20
+  speed: 50
   timer: 0
-  lifeTime: 2
+  lifeTime: 1
+  hasLearned: 0
 --- !u!114 &1737358590782630119
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -68,17 +72,89 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36567222046df1a40b18b44f97acaf68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: 
+  id: water
   phrases:
   - Splash
   - Ripple Whisper
-  prefab: {fileID: 0}
+  prefab: {fileID: 5995710866260378505, guid: 48d50156b254a4e439640c806533a39c, type: 3}
   manaCost: 50
+  cooldown: 2
+  damage: 0
+  speed: 20
+  timer: 0
+  lifeTime: 2
+  hasLearned: 0
+--- !u!114 &9026731557238514688
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4121790010199422996}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 778b79a2139f07e4caa0cb746a2eb8cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 
+  phrases:
+  - Zephyr
+  - Gust
+  prefab: {fileID: 6998388060417405259, guid: 1228b1ffd98a8cc40a13bca86eef5abd, type: 3}
+  manaCost: 10
   cooldown: 5
+  damage: 0
+  speed: 60
+  timer: 0
+  lifeTime: 3
+  hasLearned: 0
+--- !u!114 &187420504444540520
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4121790010199422996}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e68d5d19098bb8429d3545dd2f93bec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 
+  phrases:
+  - Terra
+  - Quake
+  prefab: {fileID: 5036614767299039484, guid: 6e38f639001521644be4f375428d975b, type: 3}
+  manaCost: 100
+  cooldown: 1
+  damage: 0
+  speed: 30
+  timer: 0
+  lifeTime: 4
+  hasLearned: 0
+--- !u!114 &751212940973270036
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4121790010199422996}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f456cadccd81d18409e7c163026f26e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 
+  phrases:
+  - Goodbye
+  prefab: {fileID: 0}
+  manaCost: 0
+  cooldown: 0
   damage: 0
   speed: 0
   timer: 0
   lifeTime: 0
+  hasLearned: 0
 --- !u!1 &6932450355338773108
 GameObject:
   m_ObjectHideFlags: 0

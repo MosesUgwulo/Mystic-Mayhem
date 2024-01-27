@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 811716925342970582}
   - component: {fileID: 4523692301835517137}
   - component: {fileID: 4693921042590419297}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GreenCube
   m_TagString: Cell
   m_Icon: {fileID: 0}

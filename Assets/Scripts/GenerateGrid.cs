@@ -46,7 +46,7 @@ public class GenerateGrid : MonoBehaviour
     
     private void Update()
     {
-        if (Input.GetKeyUp(KeyCode.Space))
+        if (Input.GetKeyUp(KeyCode.G))
         {
             Generate();
         }
