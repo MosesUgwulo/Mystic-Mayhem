@@ -18,5 +18,7 @@ namespace Spells
             StartCooldown();
             Destroy(fireball, lifeTime);
         }
+        
+        
     }
 }

@@ -8,6 +8,10 @@ TagManager:
   - Cell
   - PlayerSpawnpoint
   - MagicSystem
+  - Fire
+  - Water
+  - Earth
+  - Air
   layers:
   - Default
   - TransparentFX
