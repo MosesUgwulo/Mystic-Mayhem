@@ -9,5 +9,6 @@ namespace Spells
             Debug.Log("Exiting Game");
             Application.Quit();
         }
+        
     }
 }

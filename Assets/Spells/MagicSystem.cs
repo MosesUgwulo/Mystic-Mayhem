@@ -17,12 +17,24 @@ namespace Spells
         public float timer;
         public float lifeTime;
         public bool hasLearned;
-        public bool CanCast
-        {
-            get { return timer >= cooldown && ManaBar.Mana >= manaCost; }
-        }
+
+        protected bool CanCast => timer >= cooldown && ManaBar.Mana >= manaCost;
 
         protected GameObject cam;
+        
+        protected static GameObject GetInstanceOfPrefab<T>(GameObject prefab, GameObject cam, T original) where T : MagicSystem
+        {
+            var fab = Instantiate(prefab, cam.transform.position + cam.transform.forward, cam.transform.rotation);
+            var newScript = fab.AddComponent<T>();
+            var fields = typeof(T).GetFields();
+            
+            foreach (var field in fields)
+            {
+                field.SetValue(newScript, field.GetValue(original));
+            }
+
+            return fab;
+        }
         
         public enum DamageType
         {
@@ -51,7 +63,7 @@ namespace Spells
         }
         
         // start cooldown
-        public void StartCooldown()
+        protected void StartCooldown()
         {
             timer = 0;
         }

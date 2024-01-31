@@ -17,5 +17,10 @@ namespace Spells
             StartCooldown();
             Destroy(waterball, lifeTime);
         }
+
+        public void TrackEnemy(GameObject newTarget)
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }

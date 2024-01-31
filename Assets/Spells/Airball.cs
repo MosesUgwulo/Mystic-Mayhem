@@ -12,11 +12,12 @@ namespace Spells
             
             Debug.Log("Casting Airball");
             ManaBar.Mana -= manaCost;
-            var airball = Instantiate(prefab, cam.transform.position + cam.transform.forward, cam.transform.rotation);
+            var airball = GetInstanceOfPrefab(prefab, cam, this);
             airball.GetComponent<Rigidbody>().AddForce(cam.transform.forward * speed, ForceMode.Impulse);
             
             StartCooldown();
             Destroy(airball, lifeTime);
         }
+        
     }
 }

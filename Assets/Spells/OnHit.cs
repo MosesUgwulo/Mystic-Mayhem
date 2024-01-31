@@ -15,11 +15,13 @@ namespace Spells
         public Enemy.Enemy enemy;
         public bool isFirstTarget = false;
         public SphereCollider sphereCollider;
+        private MagicSystem _magicSystem;
         
         
         private void Start()
         {
             sphereCollider = GetComponent<SphereCollider>();
+            _magicSystem = GetComponent<MagicSystem>();
         }
         private void OnTriggerEnter(Collider other)
         {
@@ -30,6 +32,7 @@ namespace Spells
                     isFirstTarget = true;
                     target = other.gameObject;
                     enemy = target.GetComponent<Enemy.Enemy>();
+                    
                 }
             }
         }
@@ -47,11 +50,20 @@ namespace Spells
             if (Vector3.Distance(newTarget.transform.position, transform.position) < 5.0f)
             {
                 // Get the spell that I am currently casting
+                Debug.Log("First Target: " + newTarget.name + " has been hit for " + _magicSystem.damage + " damage");
+                Destroy(gameObject);
+                Destroy(newTarget);
                 
             }
             
         }
-        
+
+        private void OnDrawGizmos()
+        {
+            Gizmos.color = Color.red;
+            Gizmos.DrawWireSphere(transform.position, sphereCollider.radius);
+        }
+
         private void Update()
         {
             if (isFirstTarget && target != null)

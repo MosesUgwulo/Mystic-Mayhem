@@ -1,3 +1,5 @@
+using System;
+using System.Collections;
 using Player;
 using UnityEngine;
 
@@ -12,13 +14,11 @@ namespace Spells
             
             Debug.Log("Casting Fireball");
             ManaBar.Mana -= manaCost;
-            var fireball = Instantiate(prefab, cam.transform.position + cam.transform.forward, cam.transform.rotation);
+            var fireball = GetInstanceOfPrefab(prefab, cam, this);
             fireball.GetComponent<Rigidbody>().AddForce(cam.transform.forward * speed, ForceMode.Impulse);
             
             StartCooldown();
             Destroy(fireball, lifeTime);
         }
-        
-        
     }
 }
