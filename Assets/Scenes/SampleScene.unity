@@ -3646,13 +3646,18 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 573065164414424905, guid: 476ceee4f5e1457489f54cfb21671d1a,
         type: 3}
+      propertyPath: damage
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 573065164414424905, guid: 476ceee4f5e1457489f54cfb21671d1a,
+        type: 3}
       propertyPath: cooldown
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 573065164414424905, guid: 476ceee4f5e1457489f54cfb21671d1a,
         type: 3}
       propertyPath: lifeTime
-      value: 5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 573065164414424905, guid: 476ceee4f5e1457489f54cfb21671d1a,
         type: 3}
