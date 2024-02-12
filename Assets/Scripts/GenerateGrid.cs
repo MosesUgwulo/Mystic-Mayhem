@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using Unity.AI.Navigation;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -21,6 +22,7 @@ public class GenerateGrid : MonoBehaviour
     private const int Village = -2;
 
     private GameObject _folder;
+    public NavMeshSurface navMeshSurface;
 
     void Awake()
     {
@@ -32,6 +34,7 @@ public class GenerateGrid : MonoBehaviour
     private void Start()
     {
         Generate();
+        navMeshSurface.BuildNavMesh();
     }
 
     private void Generate()
@@ -50,6 +53,7 @@ public class GenerateGrid : MonoBehaviour
         {
             Generate();
         }
+        
     }
 
     void FloodFill()

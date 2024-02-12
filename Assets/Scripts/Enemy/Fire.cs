@@ -1,7 +1,10 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using Spells;
 using UnityEngine;
+using UnityEngine.AI;
+using Random = UnityEngine.Random;
 
 namespace Enemy
 {
@@ -21,11 +24,47 @@ namespace Enemy
             }
             
             timer = spells.cooldown;
+            
+            player = GameObject.Find("Player").transform;
+            agent = GetComponent<NavMeshAgent>();
+        }
+
+        public override void setPatrolTarget()
+        {
+            float randomX = Random.Range(-patrolRange, patrolRange);
+            float randomZ = Random.Range(-patrolRange, patrolRange);
+
+            var position = transform.position;
+            patrolTarget = new Vector3(position.x + randomX, position.y, position.z + randomZ);
+
+            if (Physics.Raycast(patrolTarget, -transform.up, 2f, groundMask))
+            {
+                isPatrolTargetSet = true;
+            }
+        }
+
+        public override void Patrolling()
+        {
+            if (!isPatrolTargetSet) setPatrolTarget();
+            
+            if (isPatrolTargetSet) agent.SetDestination(patrolTarget);
+            
+            var distance = transform.position - patrolTarget;
+
+            if (distance.magnitude < 1f) isPatrolTargetSet = false;
+        }
+
+        public override void Chasing()
+        {
+            agent.SetDestination(player.position);
         }
 
         public override void Attack()
         {
-
+            timer = 0;
+            agent.SetDestination(transform.position);
+            transform.LookAt(player);
+            
             if (spells == null)
             {
                 Debug.Log("No spell found");
@@ -39,20 +78,32 @@ namespace Enemy
             Destroy(fireball, spells.lifeTime);
         }
         
+        
+        
         private void Update()
         {
             if (timer < spells.cooldown)
             {
                 timer += Time.deltaTime;
             }
+
+            var position = transform.position;
+            isPlayerInRange = Physics.CheckSphere(position, detectionRange, playerMask);
+            isPlayerInAttackRange = Physics.CheckSphere(position, attackRange, playerMask);
             
-            if (Input.GetKeyDown(KeyCode.Q) && timer >= spells.cooldown)
-            {
-                Attack();
-                timer = 0;
-            }
-            
+            if (!isPlayerInRange && !isPlayerInAttackRange) Patrolling();
+            if (isPlayerInRange && !isPlayerInAttackRange) Chasing();
+            if (isPlayerInAttackRange && timer >= spells.cooldown) Attack();
         }
-        
+
+        private void OnDrawGizmosSelected()
+        {
+            Gizmos.color = Color.green;
+            Gizmos.DrawWireSphere(transform.position, patrolRange);
+            Gizmos.color = Color.yellow;
+            Gizmos.DrawWireSphere(transform.position, detectionRange);
+            Gizmos.color = Color.red;
+            Gizmos.DrawWireSphere(transform.position, attackRange);
+        }
     }
 }

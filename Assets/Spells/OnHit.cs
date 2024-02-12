@@ -51,8 +51,8 @@ namespace Spells
             {
                 // Get the spell that I am currently casting
                 Debug.Log("First Target: " + newTarget.name + " has been hit for " + _magicSystem.damage + " damage");
-                Destroy(gameObject);
-                Destroy(newTarget);
+                // Destroy(gameObject);
+                // Destroy(newTarget);
                 
             }
             

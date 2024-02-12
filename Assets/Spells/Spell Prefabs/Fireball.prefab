@@ -5009,8 +5009,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   layerMask:
     serializedVersion: 2
-    m_Bits: 128
-  trackingSpeed: 50
+    m_Bits: 0
+  trackingSpeed: 30
   target: {fileID: 0}
   enemy: {fileID: 0}
   isFirstTarget: 0

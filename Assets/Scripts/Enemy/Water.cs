@@ -37,6 +37,21 @@ namespace Enemy
             }
         }
 
+        public override void setPatrolTarget()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public override void Patrolling()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public override void Chasing()
+        {
+            throw new System.NotImplementedException();
+        }
+
         public override void Attack()
         {
             if (spells == null)

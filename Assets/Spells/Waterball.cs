@@ -11,7 +11,7 @@ namespace Spells
             
             Debug.Log("Casting Waterball");
             ManaBar.Mana -= manaCost;
-            var waterball = Instantiate(prefab, cam.transform.position + cam.transform.forward, cam.transform.rotation);
+            var waterball = GetInstanceOfPrefab(prefab, cam, this);
             waterball.GetComponent<Rigidbody>().AddForce(cam.transform.forward * speed, ForceMode.Impulse);
             
             StartCooldown();

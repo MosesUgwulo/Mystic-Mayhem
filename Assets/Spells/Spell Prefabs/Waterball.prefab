@@ -4923,6 +4923,7 @@ GameObject:
   - component: {fileID: 4571333831854358093}
   - component: {fileID: 7233434302432294732}
   - component: {fileID: 224903964625325084}
+  - component: {fileID: -613923296785058295}
   m_Layer: 0
   m_Name: Waterball
   m_TagString: Untagged
@@ -4994,3 +4995,23 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &-613923296785058295
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5995710866260378505}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8581f878a4031304fbbd61bead537ec5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 0
+  trackingSpeed: 10
+  target: {fileID: 0}
+  enemy: {fileID: 0}
+  isFirstTarget: 0
+  sphereCollider: {fileID: 0}

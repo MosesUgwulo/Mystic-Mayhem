@@ -11,7 +11,7 @@ namespace Spells
             
             Debug.Log("Casting Earthball");
             ManaBar.Mana -= manaCost;
-            var earthball = Instantiate(prefab, cam.transform.position + cam.transform.forward, cam.transform.rotation);
+            var earthball = GetInstanceOfPrefab(prefab, cam, this);
             earthball.GetComponent<Rigidbody>().AddForce(cam.transform.forward * speed, ForceMode.Impulse);
             
             StartCooldown();
