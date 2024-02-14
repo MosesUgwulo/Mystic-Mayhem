@@ -58,7 +58,7 @@ namespace Player
                 Debug.Log("You said: <b>" + args.text + "</b> - confidence: <b>" + args.confidence + "</b>");
             
                 // Get the spell that matches the recognized phrase.
-                MagicSystem spell = _spells.FirstOrDefault(s => s.phrases.Contains(args.text));
+                MagicSystem spell = _spells.FirstOrDefault(s => s.phrases.Contains(args.text) && !s.isEnemySpell);
                 if (spell == null)
                     return;
             

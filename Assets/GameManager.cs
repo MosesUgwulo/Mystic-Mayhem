@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Security.Cryptography;
+using Enemy;
 using Player;
 using Spells;
 using UnityEngine;

@@ -8,28 +8,22 @@ using Random = UnityEngine.Random;
 
 namespace Enemy
 {
-    public class Fire : Enemy
+    public class FireEnemy : Enemy
     {
-        private List<MagicSystem> _spells;
-        public float timer;
+        private float _timer;
         void Start()
         {
-            var spellsArray = spells.GetComponents<MagicSystem>();
-            _spells = spellsArray.ToList();
-            spells = _spells.FirstOrDefault(s => s.phrases.Contains("Flame"));
-
-            if (spells == null)
-            {
-                return;
-            }
+            GameObject magicSystem = GameObject.Find("MagicSystem");
             
-            timer = spells.cooldown;
+            var spellArray = magicSystem.GetComponents<MagicSystem>();
+            spells = spellArray.ToList().FindAll(s => s.damageType == MagicSystem.DamageType.Fire && s.isEnemySpell);
+            
             
             player = GameObject.Find("Player").transform;
             agent = GetComponent<NavMeshAgent>();
         }
 
-        public override void setPatrolTarget()
+        public override void SetPatrolTarget()
         {
             float randomX = Random.Range(-patrolRange, patrolRange);
             float randomZ = Random.Range(-patrolRange, patrolRange);
@@ -37,7 +31,7 @@ namespace Enemy
             var position = transform.position;
             patrolTarget = new Vector3(position.x + randomX, position.y, position.z + randomZ);
 
-            if (Physics.Raycast(patrolTarget, -transform.up, 2f, groundMask))
+            if (Physics.Raycast(patrolTarget, -transform.up, 2f, groundMask)) 
             {
                 isPatrolTargetSet = true;
             }
@@ -45,7 +39,7 @@ namespace Enemy
 
         public override void Patrolling()
         {
-            if (!isPatrolTargetSet) setPatrolTarget();
+            if (!isPatrolTargetSet) SetPatrolTarget();
             
             if (isPatrolTargetSet) agent.SetDestination(patrolTarget);
             
@@ -61,30 +55,22 @@ namespace Enemy
 
         public override void Attack()
         {
-            timer = 0;
             agent.SetDestination(transform.position);
             transform.LookAt(player);
             
-            if (spells == null)
-            {
-                Debug.Log("No spell found");
-                return;
-            }
-            
-            mana -= spells.manaCost;
-            var fireball = Instantiate(spells.prefab, castingPoint.position + castingPoint.forward, castingPoint.rotation);
-            fireball.GetComponent<Rigidbody>().AddForce(castingPoint.forward * spells.speed, ForceMode.Impulse);
-            
-            Destroy(fireball, spells.lifeTime);
+            // Pick a random spell from the list of spells
+            var spell = spells[Random.Range(0, spells.Count)];
+            spell.CastSpell(castingPoint.gameObject);
+            _timer = spell.cooldown;
         }
         
         
         
         private void Update()
         {
-            if (timer < spells.cooldown)
+            if (_timer > 0)
             {
-                timer += Time.deltaTime;
+                _timer -= Time.deltaTime;
             }
 
             var position = transform.position;
@@ -93,7 +79,7 @@ namespace Enemy
             
             if (!isPlayerInRange && !isPlayerInAttackRange) Patrolling();
             if (isPlayerInRange && !isPlayerInAttackRange) Chasing();
-            if (isPlayerInAttackRange && timer >= spells.cooldown) Attack();
+            if (isPlayerInAttackRange && _timer <= 0) Attack();
         }
 
         private void OnDrawGizmosSelected()

@@ -8,17 +8,18 @@ namespace Spells
     public class Fireball : MagicSystem
     {
         
-        public override void CastSpell()
+        public override void CastSpell(GameObject go = null)
         {
-            if (!CanCast) return;
+                if (!CanCast) return;
             
-            Debug.Log("Casting Fireball");
-            ManaBar.Mana -= manaCost;
-            var fireball = GetInstanceOfPrefab(prefab, cam, this);
-            fireball.GetComponent<Rigidbody>().AddForce(cam.transform.forward * speed, ForceMode.Impulse);
+                Debug.Log("Casting Fireball");
+                ManaBar.Mana -= manaCost;
+                var fireball = GetInstanceOfPrefab(prefab, cam.transform, this);
+                fireball.GetComponent<Rigidbody>().AddForce(cam.transform.forward * speed, ForceMode.Impulse);
             
-            StartCooldown();
-            Destroy(fireball, lifeTime);
+                StartCooldown();
+                Destroy(fireball, lifeTime);
         }
+        
     }
 }

@@ -1,4 +1,5 @@
 using System;
+using Enemy;
 using Player;
 using UnityEngine;
 using UnityEngine.Windows.Speech;
@@ -7,7 +8,7 @@ namespace Spells
 {
     public abstract class MagicSystem : MonoBehaviour
     {
-        public string id;
+        public DamageType damageType;
         public string[] phrases;
         public GameObject prefab;
         public float manaCost;
@@ -17,14 +18,15 @@ namespace Spells
         public float timer;
         public float lifeTime;
         public bool hasLearned;
-
+        public bool isEnemySpell;
+        
         protected bool CanCast => timer >= cooldown && ManaBar.Mana >= manaCost;
 
         protected GameObject cam;
         
-        protected static GameObject GetInstanceOfPrefab<T>(GameObject prefab, GameObject cam, T original) where T : MagicSystem
+        protected static GameObject GetInstanceOfPrefab<T>(GameObject prefab, Transform origin, T original) where T : MagicSystem
         {
-            var fab = Instantiate(prefab, cam.transform.position + cam.transform.forward, cam.transform.rotation);
+            var fab = Instantiate(prefab, origin.position + origin.forward, origin.rotation);
             var newScript = fab.AddComponent<T>();
             var fields = typeof(T).GetFields();
             
@@ -41,10 +43,12 @@ namespace Spells
             Fire,
             Water,
             Earth,
-            Air
+            Air,
+            Utility,
+            None,
         }
         
-        public abstract void CastSpell();
+        public abstract void CastSpell(GameObject go = null); // go is the GameObject casting the spell
         
         private void Start()
         {
@@ -55,7 +59,6 @@ namespace Spells
         
         private void Update()
         {
-            
             if (timer < cooldown)
             {
                 timer += Time.deltaTime;

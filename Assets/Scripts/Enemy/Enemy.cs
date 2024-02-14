@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using Spells;
 using UnityEngine;
 using UnityEngine.AI;
@@ -7,11 +8,9 @@ namespace Enemy
 {
     public abstract class Enemy : MonoBehaviour
     {
-        public MagicSystem spells;
+        public List<MagicSystem> spells;
         public float health;
-        public float speed;
-        public float damage;
-        public float mana;
+        public float walkSpeed;
         public Transform castingPoint;
         public Transform player;
         public LayerMask groundMask, playerMask;
@@ -26,10 +25,9 @@ namespace Enemy
         public float detectionRange, attackRange;
         protected bool isPlayerInRange, isPlayerInAttackRange;
 
-        public abstract void setPatrolTarget();
+        public abstract void SetPatrolTarget();
         public abstract void Patrolling();
         public abstract void Chasing();
         public abstract void Attack();
-        
     }
 }

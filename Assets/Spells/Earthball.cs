@@ -5,13 +5,13 @@ namespace Spells
 {
     public class EarthBall : MagicSystem
     {
-        public override void CastSpell()
+        public override void CastSpell(GameObject go = null)
         {
             if (!CanCast) return;
             
             Debug.Log("Casting Earthball");
             ManaBar.Mana -= manaCost;
-            var earthball = GetInstanceOfPrefab(prefab, cam, this);
+            var earthball = GetInstanceOfPrefab(prefab, cam.transform, this);
             earthball.GetComponent<Rigidbody>().AddForce(cam.transform.forward * speed, ForceMode.Impulse);
             
             StartCooldown();

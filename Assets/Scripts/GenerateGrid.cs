@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using Player;
 using Unity.AI.Navigation;
 using UnityEngine;
 using Random = UnityEngine.Random;
