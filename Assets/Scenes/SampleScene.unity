@@ -288,12 +288,6 @@ Mesh:
     offset: 0
     size: 0
     path: 
---- !u!1 &181153905 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4121790010199422996, guid: 476ceee4f5e1457489f54cfb21671d1a,
-    type: 3}
-  m_PrefabInstance: {fileID: 7138326497989816409}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &410087039
 GameObject:
   m_ObjectHideFlags: 0
@@ -418,58 +412,12 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 7138326497989816409}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 181153905}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 726894ea4498c0b45a2698c11b40ad64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &649683748
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 181153905}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bf6b9c85e2f097543b966de7d04dbaa6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damageType: 0
-  phrases: []
-  prefab: {fileID: 9062800000673973901, guid: 99caf849b3217804ba4f555c9ee95878, type: 3}
-  manaCost: 0
-  cooldown: 2
-  damage: 0
-  speed: 50
-  timer: 0
-  lifeTime: 6
-  hasLearned: 0
-  isEnemySpell: 1
---- !u!114 &649683750
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 181153905}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bf6b9c85e2f097543b966de7d04dbaa6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damageType: 0
-  phrases: []
-  prefab: {fileID: 5036614767299039484, guid: 6e38f639001521644be4f375428d975b, type: 3}
-  manaCost: 0
-  cooldown: 6
-  damage: 0
-  speed: 50
-  timer: 0
-  lifeTime: 3
-  hasLearned: 0
-  isEnemySpell: 1
 --- !u!1 &650971295 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2523542500073184757, guid: 316d56f8704479042988aa78f324ee51,
@@ -3061,6 +3009,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 7139971058233467686, guid: 316d56f8704479042988aa78f324ee51, type: 3}
+    - {fileID: 1741452275234974841, guid: 316d56f8704479042988aa78f324ee51, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -3602,13 +3551,23 @@ PrefabInstance:
     - target: {fileID: 5501858285141654720, guid: d736753afff8be349a28f88825fb90ce,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7493242715536918896, guid: d736753afff8be349a28f88825fb90ce,
+        type: 3}
+      propertyPath: health
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 7493242715536918896, guid: d736753afff8be349a28f88825fb90ce,
         type: 3}
       propertyPath: spells
       value: 
       objectReference: {fileID: 649683743}
+    - target: {fileID: 7493242715536918896, guid: d736753afff8be349a28f88825fb90ce,
+        type: 3}
+      propertyPath: elementType
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8025023617843589746, guid: d736753afff8be349a28f88825fb90ce,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3727,6 +3686,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fire Wizard
       objectReference: {fileID: 0}
+    - target: {fileID: 3572593800250159516, guid: 68da333a23d1cda4ebfd37cc4b424cd2,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8260155966316163027, guid: 68da333a23d1cda4ebfd37cc4b424cd2,
         type: 3}
       propertyPath: damage
@@ -3735,7 +3699,7 @@ PrefabInstance:
     - target: {fileID: 8260155966316163027, guid: 68da333a23d1cda4ebfd37cc4b424cd2,
         type: 3}
       propertyPath: health
-      value: 600
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 8260155966316163027, guid: 68da333a23d1cda4ebfd37cc4b424cd2,
         type: 3}
@@ -3768,78 +3732,18 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 187420504444540520, guid: 476ceee4f5e1457489f54cfb21671d1a,
         type: 3}
-      propertyPath: lifeTime
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 187420504444540520, guid: 476ceee4f5e1457489f54cfb21671d1a,
-        type: 3}
-      propertyPath: damageType
-      value: 2
+      propertyPath: damage
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 573065164414424905, guid: 476ceee4f5e1457489f54cfb21671d1a,
         type: 3}
       propertyPath: damage
-      value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 573065164414424905, guid: 476ceee4f5e1457489f54cfb21671d1a,
-        type: 3}
-      propertyPath: cooldown
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 573065164414424905, guid: 476ceee4f5e1457489f54cfb21671d1a,
-        type: 3}
-      propertyPath: lifeTime
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 573065164414424905, guid: 476ceee4f5e1457489f54cfb21671d1a,
-        type: 3}
-      propertyPath: isEnemySpell
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 573065164414424905, guid: 476ceee4f5e1457489f54cfb21671d1a,
-        type: 3}
-      propertyPath: phrases.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 573065164414424905, guid: 476ceee4f5e1457489f54cfb21671d1a,
-        type: 3}
-      propertyPath: phrases.Array.data[2]
-      value: testicular torsion
-      objectReference: {fileID: 0}
-    - target: {fileID: 751212940973270036, guid: 476ceee4f5e1457489f54cfb21671d1a,
-        type: 3}
-      propertyPath: damageType
-      value: 5
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1737358590782630119, guid: 476ceee4f5e1457489f54cfb21671d1a,
         type: 3}
-      propertyPath: speed
-      value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 1737358590782630119, guid: 476ceee4f5e1457489f54cfb21671d1a,
-        type: 3}
-      propertyPath: cooldown
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1737358590782630119, guid: 476ceee4f5e1457489f54cfb21671d1a,
-        type: 3}
-      propertyPath: lifeTime
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1737358590782630119, guid: 476ceee4f5e1457489f54cfb21671d1a,
-        type: 3}
-      propertyPath: damageType
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1737358590782630119, guid: 476ceee4f5e1457489f54cfb21671d1a,
-        type: 3}
-      propertyPath: phrases.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1737358590782630119, guid: 476ceee4f5e1457489f54cfb21671d1a,
-        type: 3}
-      propertyPath: phrases.Array.data[2]
-      value: Domain Expansion
+      propertyPath: damage
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 3818647505380852562, guid: 476ceee4f5e1457489f54cfb21671d1a,
         type: 3}
@@ -3891,6 +3795,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3911986728224738496, guid: 476ceee4f5e1457489f54cfb21671d1a,
+        type: 3}
+      propertyPath: damage
+      value: 16
+      objectReference: {fileID: 0}
     - target: {fileID: 6360068299854136629, guid: 476ceee4f5e1457489f54cfb21671d1a,
         type: 3}
       propertyPath: player
@@ -3903,32 +3812,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9026731557238514688, guid: 476ceee4f5e1457489f54cfb21671d1a,
         type: 3}
-      propertyPath: cooldown
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9026731557238514688, guid: 476ceee4f5e1457489f54cfb21671d1a,
-        type: 3}
-      propertyPath: lifeTime
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9026731557238514688, guid: 476ceee4f5e1457489f54cfb21671d1a,
-        type: 3}
-      propertyPath: damageType
-      value: 3
+      propertyPath: damage
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects:
-    - {fileID: 1909963245369665514, guid: 476ceee4f5e1457489f54cfb21671d1a, type: 3}
+    m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 4121790010199422996, guid: 476ceee4f5e1457489f54cfb21671d1a,
-        type: 3}
-      insertIndex: 2
-      addedObject: {fileID: 649683748}
-    - targetCorrespondingSourceObject: {fileID: 4121790010199422996, guid: 476ceee4f5e1457489f54cfb21671d1a,
-        type: 3}
-      insertIndex: 3
-      addedObject: {fileID: 649683750}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 476ceee4f5e1457489f54cfb21671d1a, type: 3}
 --- !u!1001 &7553335107946976768
 PrefabInstance:
@@ -3940,9 +3830,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 168468983490405966, guid: 6d5f70b1942f1c74493bb744f19f11c8,
         type: 3}
+      propertyPath: health
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 168468983490405966, guid: 6d5f70b1942f1c74493bb744f19f11c8,
+        type: 3}
       propertyPath: spells
       value: 
       objectReference: {fileID: 649683743}
+    - target: {fileID: 168468983490405966, guid: 6d5f70b1942f1c74493bb744f19f11c8,
+        type: 3}
+      propertyPath: elementType
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1701640777863241523, guid: 6d5f70b1942f1c74493bb744f19f11c8,
         type: 3}
       propertyPath: m_Name
@@ -3951,7 +3851,7 @@ PrefabInstance:
     - target: {fileID: 1701640777863241523, guid: 6d5f70b1942f1c74493bb744f19f11c8,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7909776477118380770, guid: 6d5f70b1942f1c74493bb744f19f11c8,
         type: 3}
@@ -4024,13 +3924,23 @@ PrefabInstance:
     - target: {fileID: 5194254806635850396, guid: 8bab714c6cda72f4bb331cf639575951,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7188318657743269806, guid: 8bab714c6cda72f4bb331cf639575951,
+        type: 3}
+      propertyPath: health
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 7188318657743269806, guid: 8bab714c6cda72f4bb331cf639575951,
         type: 3}
       propertyPath: spells
       value: 
       objectReference: {fileID: 649683743}
+    - target: {fileID: 7188318657743269806, guid: 8bab714c6cda72f4bb331cf639575951,
+        type: 3}
+      propertyPath: elementType
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 7190016928228166921, guid: 8bab714c6cda72f4bb331cf639575951,
         type: 3}
       propertyPath: m_LocalPosition.x

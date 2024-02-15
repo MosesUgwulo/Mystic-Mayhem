@@ -62,7 +62,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 001ec223e51804f43b829b3e161516c1, type: 2}
+  - {fileID: 2100000, guid: 754f19102b55b2c41b6833a41f77a7fa, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4861,7 +4861,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 001ec223e51804f43b829b3e161516c1, type: 2}
+  - {fileID: 2100000, guid: 754f19102b55b2c41b6833a41f77a7fa, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4923,9 +4923,9 @@ GameObject:
   - component: {fileID: 4571333831854358093}
   - component: {fileID: 7233434302432294732}
   - component: {fileID: 224903964625325084}
-  - component: {fileID: 794115814106968725}
+  - component: {fileID: -613923296785058295}
   m_Layer: 0
-  m_Name: Fireball
+  m_Name: Waterball
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4993,9 +4993,9 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 10
+  m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &794115814106968725
+--- !u!114 &-613923296785058295
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5009,8 +5009,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   layerMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 128
   trackingSpeed: 30
+  trackingRange: 10
   target: {fileID: 0}
   enemy: {fileID: 0}
   isFirstTarget: 0

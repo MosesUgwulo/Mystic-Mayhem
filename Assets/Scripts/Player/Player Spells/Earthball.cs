@@ -11,8 +11,8 @@ namespace Spells
             
             Debug.Log("Casting Earthball");
             ManaBar.Mana -= manaCost;
-            var earthball = GetInstanceOfPrefab(prefab, cam.transform, this);
-            earthball.GetComponent<Rigidbody>().AddForce(cam.transform.forward * speed, ForceMode.Impulse);
+            var earthball = GetInstanceOfPrefab(prefab, cam.transform, this); // Get the instance of the prefab and set it's parent to the camera
+            earthball.GetComponent<Rigidbody>().AddForce(cam.transform.forward * speed, ForceMode.Impulse); // Add force to the earthball in the direction of the camera
             
             StartCooldown();
             Destroy(earthball, lifeTime);

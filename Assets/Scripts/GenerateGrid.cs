@@ -114,6 +114,7 @@ public class GenerateGrid : MonoBehaviour
         BuildTerrain();
 
         // TODO: Add check to make sure all biomes exist
+        
     }
 
     bool IsWithinBound(Vector2Int pos)
@@ -142,15 +143,15 @@ public class GenerateGrid : MonoBehaviour
                 
                 // var size = Vector3.one * cellSize;
 
-                if (tileVal == 0)
+                if (tileVal == 0) // Empty space
                 {
-                    Instantiate(cellPrefabs[tileVal], new Vector3(x * (cellSize), 0, y * (cellSize)), Quaternion.identity, _folder.transform);
+                    Instantiate(cellPrefabs[tileVal], new Vector3(x * (cellSize), 0, y * (cellSize)), Quaternion.identity, _folder.transform); 
                 }
-                else if (tileVal == Village)
+                else if (tileVal == Village) // Village space
                 {
                     Instantiate(villagePrefab, new Vector3(x * (cellSize), 0, y * (cellSize)), Quaternion.identity, _folder.transform);
                 }
-                else
+                else // Filled space
                 {
                     Instantiate(cellPrefabs[tileVal-1], new Vector3(x * (cellSize), 0, y * (cellSize)), Quaternion.identity, _folder.transform);
                 }

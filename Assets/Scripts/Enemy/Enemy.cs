@@ -9,6 +9,7 @@ namespace Enemy
     public abstract class Enemy : MonoBehaviour
     {
         public List<MagicSystem> spells;
+        public ElementTypes elementType;
         public float health;
         public float walkSpeed;
         public Transform castingPoint;
@@ -25,9 +26,18 @@ namespace Enemy
         public float detectionRange, attackRange;
         protected bool isPlayerInRange, isPlayerInAttackRange;
 
-        public abstract void SetPatrolTarget();
-        public abstract void Patrolling();
-        public abstract void Chasing();
-        public abstract void Attack();
+        public enum ElementTypes
+        {
+            Fire,
+            Water,
+            Earth,
+            Air,
+        }
+
+        public abstract void SetPatrolTarget(); // Set the patrol target for the enemy if it's not set yet
+        public abstract void Patrolling(); // If the enemy is patrolling, set the target and move towards it
+        public abstract void Chasing(); // If the enemy is chasing the player, set the destination to the player's position
+        public abstract void Attack(); // If the enemy is in attack range, stop the enemy from moving, look at the player and cast a spell
+        public abstract void TakeDamage(float damage); // If the enemy takes damage, subtract the damage from the health and if the health is less than or equal to 0, destroy the enemy
     }
 }

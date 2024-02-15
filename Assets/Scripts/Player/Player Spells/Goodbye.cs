@@ -7,7 +7,7 @@ namespace Spells
         public override void CastSpell(GameObject go = null)
         {
             Debug.Log("Exiting Game");
-            Application.Quit();
+            Application.Quit(); // Exit the game
         }
         
     }
