@@ -70,7 +70,7 @@ namespace Player.Player_Spells
                 transform.Translate(Vector3.forward * (trackingSpeed * Time.deltaTime));
             }
 
-            if (Vector3.Distance(newTarget.transform.position, transform.position) < 10.0f)
+            if (Vector3.Distance(newTarget.transform.position, transform.position) < 5.0f)
             {
                 // Get the spell that I am currently casting
                 Debug.Log("First Target: " + newTarget.name + " has been hit for " + _magicSystem.damage + " damage");

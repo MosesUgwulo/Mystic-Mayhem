@@ -245,11 +245,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 213655d0e30094842badbe9acc7e7819, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spells: {fileID: 0}
-  health: 0
-  speed: 0
-  damage: 0
-  mana: 200
+  spells:
+  - {fileID: 0}
+  elementType: 1
+  health: 100
+  walkSpeed: 0
   castingPoint: {fileID: 58459524095501883}
   player: {fileID: 0}
   groundMask:

@@ -162,11 +162,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2e536167053dab4bb3c679f2388836e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spells: {fileID: 0}
-  health: 200
-  speed: 3
-  damage: 0
-  mana: 200
+  spells:
+  - {fileID: 0}
+  elementType: 0
+  health: 100
+  walkSpeed: 0
   castingPoint: {fileID: 1591256237588305889}
   player: {fileID: 0}
   groundMask:
@@ -178,7 +178,6 @@ MonoBehaviour:
   patrolRange: 100
   detectionRange: 50
   attackRange: 25
-  timer: 0
 --- !u!195 &5703081379788426403
 NavMeshAgent:
   m_ObjectHideFlags: 0
