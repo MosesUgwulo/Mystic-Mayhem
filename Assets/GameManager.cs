@@ -13,8 +13,8 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
     public MagicSystem magicSystem;
     public GameObject player;
-    public SpeechRecognition speechRecognition;
-
+    // public SpeechRecognition speechRecognition;
+    public SpeechRecognitionAPI speechRecognitionAPI;
     private void Awake()
     {
         if (instance == null)

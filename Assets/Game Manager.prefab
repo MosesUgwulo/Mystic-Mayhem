@@ -1,5 +1,49 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &523095714601584675
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 940633027082361663}
+  - component: {fileID: 4012368410125178697}
+  m_Layer: 0
+  m_Name: HuggingFaceSpeechAPI
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &940633027082361663
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 523095714601584675}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -355.82263, y: -4.9775686, z: -315.12958}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3818647505380852562}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4012368410125178697
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 523095714601584675}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abb5577634bcf8740ac92659c58f1801, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4121790010199422996
 GameObject:
   m_ObjectHideFlags: 0
@@ -59,7 +103,7 @@ MonoBehaviour:
   prefab: {fileID: 5995710866260378505, guid: 18180f1022f183e43b2f9e7b914e718c, type: 3}
   manaCost: 25
   cooldown: 1
-  damage: 50
+  damage: 100
   speed: 50
   timer: 0
   lifeTime: 5
@@ -107,7 +151,7 @@ MonoBehaviour:
   prefab: {fileID: 5995710866260378505, guid: 48d50156b254a4e439640c806533a39c, type: 3}
   manaCost: 50
   cooldown: 1
-  damage: 0
+  damage: 10
   speed: 50
   timer: 0
   lifeTime: 5
@@ -155,7 +199,7 @@ MonoBehaviour:
   prefab: {fileID: 6998388060417405259, guid: 1228b1ffd98a8cc40a13bca86eef5abd, type: 3}
   manaCost: 10
   cooldown: 1
-  damage: 0
+  damage: 10
   speed: 60
   timer: 0
   lifeTime: 5
@@ -203,7 +247,7 @@ MonoBehaviour:
   prefab: {fileID: 5036614767299039484, guid: 6e38f639001521644be4f375428d975b, type: 3}
   manaCost: 100
   cooldown: 1
-  damage: 0
+  damage: 10
   speed: 30
   timer: 0
   lifeTime: 5
@@ -226,7 +270,7 @@ MonoBehaviour:
   prefab: {fileID: 7500578738342372655, guid: b1a87e07fc023df4ea6f743d08ab93e1, type: 3}
   manaCost: 0
   cooldown: 2
-  damage: 20
+  damage: 16
   speed: 50
   timer: 0
   lifeTime: 6
@@ -286,8 +330,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 8868448690548879493}
   - {fileID: 2612453509503937330}
+  - {fileID: 940633027082361663}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &6360068299854136629
@@ -304,100 +348,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   magicSystem: {fileID: 573065164414424905}
   player: {fileID: 0}
-  speechRecognition: {fileID: 2852036267839235423}
---- !u!1001 &7668446624115264074
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 3818647505380852562}
-    m_Modifications:
-    - target: {fileID: 1258972199371324111, guid: bb57dc1cba7a8b0448792d6aa5d3d19c,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -384.83
-      objectReference: {fileID: 0}
-    - target: {fileID: 1258972199371324111, guid: bb57dc1cba7a8b0448792d6aa5d3d19c,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -9.553392
-      objectReference: {fileID: 0}
-    - target: {fileID: 1258972199371324111, guid: bb57dc1cba7a8b0448792d6aa5d3d19c,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -321.74927
-      objectReference: {fileID: 0}
-    - target: {fileID: 1258972199371324111, guid: bb57dc1cba7a8b0448792d6aa5d3d19c,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1258972199371324111, guid: bb57dc1cba7a8b0448792d6aa5d3d19c,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1258972199371324111, guid: bb57dc1cba7a8b0448792d6aa5d3d19c,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1258972199371324111, guid: bb57dc1cba7a8b0448792d6aa5d3d19c,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1258972199371324111, guid: bb57dc1cba7a8b0448792d6aa5d3d19c,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1258972199371324111, guid: bb57dc1cba7a8b0448792d6aa5d3d19c,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1258972199371324111, guid: bb57dc1cba7a8b0448792d6aa5d3d19c,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5620417897378197269, guid: bb57dc1cba7a8b0448792d6aa5d3d19c,
-        type: 3}
-      propertyPath: words.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 5620417897378197269, guid: bb57dc1cba7a8b0448792d6aa5d3d19c,
-        type: 3}
-      propertyPath: words.Array.data[3]
-      value: fire ball
-      objectReference: {fileID: 0}
-    - target: {fileID: 7392033782080077713, guid: bb57dc1cba7a8b0448792d6aa5d3d19c,
-        type: 3}
-      propertyPath: m_Name
-      value: Speech
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: bb57dc1cba7a8b0448792d6aa5d3d19c, type: 3}
---- !u!114 &2852036267839235423 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5620417897378197269, guid: bb57dc1cba7a8b0448792d6aa5d3d19c,
-    type: 3}
-  m_PrefabInstance: {fileID: 7668446624115264074}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 23e0f3249df0f02439d06172d5112a91, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!4 &8868448690548879493 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1258972199371324111, guid: bb57dc1cba7a8b0448792d6aa5d3d19c,
-    type: 3}
-  m_PrefabInstance: {fileID: 7668446624115264074}
-  m_PrefabAsset: {fileID: 0}
+  speechRecognitionAPI: {fileID: 4012368410125178697}

@@ -3536,6 +3536,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Water Wizard
       objectReference: {fileID: 0}
+    - target: {fileID: 5501858285141654720, guid: d736753afff8be349a28f88825fb90ce,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8025023617843589746, guid: d736753afff8be349a28f88825fb90ce,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3654,6 +3659,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fire Wizard
       objectReference: {fileID: 0}
+    - target: {fileID: 3572593800250159516, guid: 68da333a23d1cda4ebfd37cc4b424cd2,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3667,21 +3677,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 187420504444540520, guid: 476ceee4f5e1457489f54cfb21671d1a,
-        type: 3}
-      propertyPath: damage
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 573065164414424905, guid: 476ceee4f5e1457489f54cfb21671d1a,
-        type: 3}
-      propertyPath: damage
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 1737358590782630119, guid: 476ceee4f5e1457489f54cfb21671d1a,
-        type: 3}
-      propertyPath: damage
-      value: 10
-      objectReference: {fileID: 0}
     - target: {fileID: 3818647505380852562, guid: 476ceee4f5e1457489f54cfb21671d1a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3732,11 +3727,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3911986728224738496, guid: 476ceee4f5e1457489f54cfb21671d1a,
-        type: 3}
-      propertyPath: damage
-      value: 16
-      objectReference: {fileID: 0}
     - target: {fileID: 6360068299854136629, guid: 476ceee4f5e1457489f54cfb21671d1a,
         type: 3}
       propertyPath: player
@@ -3746,11 +3736,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Game Manager
-      objectReference: {fileID: 0}
-    - target: {fileID: 9026731557238514688, guid: 476ceee4f5e1457489f54cfb21671d1a,
-        type: 3}
-      propertyPath: damage
-      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3769,6 +3754,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Earth Wizard
+      objectReference: {fileID: 0}
+    - target: {fileID: 1701640777863241523, guid: 6d5f70b1942f1c74493bb744f19f11c8,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7909776477118380770, guid: 6d5f70b1942f1c74493bb744f19f11c8,
         type: 3}
@@ -3837,6 +3827,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Air Wizard
+      objectReference: {fileID: 0}
+    - target: {fileID: 5194254806635850396, guid: 8bab714c6cda72f4bb331cf639575951,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7190016928228166921, guid: 8bab714c6cda72f4bb331cf639575951,
         type: 3}
