@@ -8,6 +8,7 @@ namespace Spells
 {
     public abstract class MagicSystem : MonoBehaviour
     {
+        public string spellName;
         public DamageType damageType;
         public string[] phrases;
         public GameObject prefab;
@@ -20,7 +21,7 @@ namespace Spells
         public bool hasLearned;
         public bool isEnemySpell;
         
-        protected bool CanCast => timer >= cooldown && ManaBar.Mana >= manaCost;
+        protected bool CanCast => timer >= cooldown && ManaBar.Mana >= manaCost && hasLearned;
 
         protected GameObject cam;
         

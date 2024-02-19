@@ -12,6 +12,7 @@ TagManager:
   - Water
   - Earth
   - Air
+  - Spell
   layers:
   - Default
   - TransparentFX

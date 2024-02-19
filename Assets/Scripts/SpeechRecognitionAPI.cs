@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Text;
 using UnityEngine;
 using HuggingFace.API;
 using Spells;
@@ -66,9 +67,12 @@ public class SpeechRecognitionAPI : MonoBehaviour
     {
         HuggingFaceAPI.AutomaticSpeechRecognition(_bytes, response =>
         {
-            string cleanedResponse = response.Replace(".", "").Trim().ToLower();
-            Debug.Log(cleanedResponse);
-            var spell = _spells.FirstOrDefault(s => s.phrases.Any(p => p.ToLower() == cleanedResponse) && !s.isEnemySpell);
+            string cleanedResponse = response.StripPunctuation().ToLower();
+            Debug.Log("'" + cleanedResponse + "'");
+            
+            // var spell = _spells.FirstOrDefault(s => s.phrases.Any(p => p.ToLower() == cleanedResponse) && !s.isEnemySpell);
+            var spell = _spells.FirstOrDefault(s => s.phrases.Any(p => cleanedResponse.Contains(p.ToLower())) && !s.isEnemySpell);
+            
             if (spell == null)
                 return;
             spell.CastSpell();
@@ -106,5 +110,20 @@ public class SpeechRecognitionAPI : MonoBehaviour
             
             return memoryStream.ToArray();
         }
+    }
+    
+}
+
+public static class StringExtension
+{
+    public static string StripPunctuation(this string s)
+    {
+        var sb = new StringBuilder();
+        foreach (char c in s)
+        {
+            if (!char.IsPunctuation(c))
+                sb.Append(c);
+        }
+        return sb.ToString().Trim();
     }
 }

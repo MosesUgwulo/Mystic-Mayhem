@@ -4926,7 +4926,7 @@ GameObject:
   - component: {fileID: 5691464701413418669}
   m_Layer: 0
   m_Name: EnemyWaterball
-  m_TagString: Untagged
+  m_TagString: Spell
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
