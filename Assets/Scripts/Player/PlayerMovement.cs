@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -5,87 +6,156 @@ namespace Player
 {
     public class PlayerMovement : MonoBehaviour
     {
-    
-        public CharacterController controller; // Character controller
-        public Transform groundCheck; // Ground check transform
-        public LayerMask groundMask; // Ground mask
-    
-        public float speed = 10f; // Movement speed
-        public float gravity = -9.81f; // Gravity
-        public float groundDistance = 0.4f; // Distance to ground
-        public float jumpHeight = 3f; // Jump height
-    
-        private Vector3 _velocity; // Velocity vector
-        private bool _isGrounded; // Is the player grounded?
+        public LayerMask groundMask;
+        public Transform orientation;
+        public float moveSpeed;
+        public float jumpForce;
+        public float jumpCooldown;
+        public float airMultiplier;
+        public float playerHeight;
+        public float drag;
+        public float maxSlopeAngle;
+        private Rigidbody _rb;
+        private Vector3 _moveDirection;
+        private RaycastHit _slopeHit;
+        private float _horizontalInput;
+        private float _verticalInput;
+        private bool _isGrounded;
+        private bool _readyToJump;
+        private bool _exitingSlope;
+        
         private bool _isChargingMana; // Is the player charging mana?
         
-        private bool _isFirstFrame = true; // Is this the first frame of the game?
+        // private bool _isFirstFrame = true; // Is this the first frame of the game?
         
         private void Start()
         {
-            ResetPlayer(); // Reset the player to the spawnpoint at the start of the game
+            _rb = GetComponent<Rigidbody>();
+            _rb.freezeRotation = true; // Freeze rotation so the player doesn't fall over
+            _readyToJump = true; // Set _readyToJump to true
+            // ResetPlayer(); // Reset the player to the spawnpoint at the start of the game
         }
 
-        public void ResetPlayer()
+        private void GetInput()
         {
-            var spawnpoint = GameObject.FindGameObjectWithTag("PlayerSpawnpoint"); // Find the spawnpoint
-            if (spawnpoint == null)
+            _horizontalInput = Input.GetAxis("Horizontal");
+            _verticalInput = Input.GetAxis("Vertical");
+
+            if (Input.GetKey(KeyCode.Space) && _readyToJump && _isGrounded)
             {
-                Debug.LogError("No spawnpoint found!");
+                _readyToJump = false; // Set _readyToJump to false
+                Jump(); // Call the Jump function
+                Invoke(nameof(ResetJump), jumpCooldown); // This allows the player to keep jumping while the button is held down
+            }
+    }
+
+        private void Move()
+        {
+            _moveDirection = orientation.forward * _verticalInput + orientation.right * _horizontalInput; // Calculate the move direction
+
+            if (OnSlope() && !_exitingSlope)
+            {
+                _rb.AddForce(GetSlopeDirection() * (moveSpeed * 20f), ForceMode.Force);
+
+                if (_rb.velocity.y > 0)
+                {
+                    _rb.AddForce(Vector3.down * 80f, ForceMode.Force);
+                }
+            }
+            
+            if (_isGrounded) _rb.AddForce(_moveDirection.normalized * (moveSpeed * 10f), ForceMode.Force); // Add force to the player
+            else if (!_isGrounded) _rb.AddForce(_moveDirection.normalized * (moveSpeed * 10f * airMultiplier), ForceMode.Force); // Add force to the player with air multiplier
+
+            _rb.useGravity = !OnSlope();
+        }
+
+        private void Jump()
+        {
+            _exitingSlope = true;
+            
+            _rb.velocity = new Vector3(_rb.velocity.x, 0, _rb.velocity.z); // Set the y component of the velocity to 0
+            _rb.AddForce(transform.up * jumpForce, ForceMode.Impulse); // Add force to the player in the up direction
+        }
+        
+        private void ResetJump()
+        {
+            _readyToJump = true; // Set _readyToJump to true
+            _exitingSlope = false;
+        }
+
+        private void LimitSpeed()
+        {
+            if (OnSlope() && !_exitingSlope)
+            {
+                if (_rb.velocity.magnitude > moveSpeed) _rb.velocity = _rb.velocity.normalized * moveSpeed;
             }
             else
             {
-                controller.Move(spawnpoint.transform.position - transform.position); // Move the player to the spawnpoint
+                Vector3 flatVelocity = new Vector3(_rb.velocity.x, 0, _rb.velocity.z); // Get the velocity without the y component
+            
+                if (flatVelocity.magnitude > moveSpeed) // If the velocity is greater than the move speed
+                {
+                    Vector3 limitedVelocity = flatVelocity.normalized * moveSpeed; // Normalize the velocity and multiply it by the move speed
+                    _rb.velocity = new Vector3(limitedVelocity.x, _rb.velocity.y, limitedVelocity.z); // Set the y component of the limited velocity to the y component of the original velocity
+                }
             }
         }
+
+        private bool OnSlope()
+        {
+            if (Physics.Raycast(transform.position, Vector3.down, out _slopeHit, playerHeight * 0.5f + 0.3f))
+            {
+                float angle = Vector3.Angle(Vector3.up, _slopeHit.normal);
+                return angle < maxSlopeAngle && angle != 0;
+            }
+
+            return false;
+        }
+
+        private Vector3 GetSlopeDirection()
+        {
+            return Vector3.ProjectOnPlane(_moveDirection, _slopeHit.normal).normalized;
+        }
+
+        // public void ResetPlayer()
+        // {
+        //     var spawnpoint = GameObject.FindGameObjectWithTag("PlayerSpawnpoint"); // Find the spawnpoint
+        // }
 
         
         private void Update()
         {
+            _isGrounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.2f, groundMask); // Check if the player is grounded
+            GetInput();
+            LimitSpeed();
             
-            _isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask); // Check if player is grounded
+            if (_isGrounded) _rb.drag = drag; // If the player is grounded, apply drag
+            else 
+                _rb.drag = 0; // If the player is not grounded, don't apply drag
             
-        
-            if (_isGrounded && _velocity.y < 0) // If player is grounded and falling
-            {
-                _velocity.y = -2f; // Set velocity to -2
-            }
-        
-            float horizontalInput = Input.GetAxisRaw("Horizontal"); // Horizontal input
-            float verticalInput = Input.GetAxisRaw("Vertical"); // Vertical input
-
-            var transformVar = transform;
-            Vector3 movement = transformVar.right * horizontalInput + transformVar.forward * verticalInput; // Calculate movement vector based on input
-        
-            controller.Move(movement * (speed * Time.deltaTime)); // Move the player based on the movement vector
-            
-
-            if (Input.GetButtonDown("Jump") && _isGrounded) // If player presses jump and is grounded
-            {
-                _velocity.y = Mathf.Sqrt(jumpHeight * -2 * gravity); // Set velocity to jump height
-            }
-        
-            _velocity.y += gravity * Time.deltaTime; // Apply gravity
-        
-            controller.Move(_velocity * Time.deltaTime); // Apply gravity
             
             // Pressing R returns the player to the start
-            if (Input.GetKey(KeyCode.R))
-            {
-                ResetPlayer();
-            }
+            // if (Input.GetKey(KeyCode.R))
+            // {
+            //     ResetPlayer();
+            // }
 
             if (_isChargingMana)
             {
                 ManaBar.Mana += 0.25f;
             }
             
-            if (_isFirstFrame) // This only runs on the first frame and then never again
-            {
-                _isFirstFrame = false;
-                ResetPlayer();
-            }
+            // if (_isFirstFrame) // This only runs on the first frame and then never again
+            // {
+            //     _isFirstFrame = false;
+            //     ResetPlayer();
+            // }
             
+        }
+
+        private void FixedUpdate()
+        {
+            Move();
         }
 
         public void OnChargeMana(InputAction.CallbackContext ctx) // This function is called when the player presses the charge mana button

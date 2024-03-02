@@ -54,7 +54,7 @@ namespace Spells
         private void Start()
         {
             timer = cooldown;
-            cam = GameManager.instance.player.GetComponentInChildren<Camera>().gameObject;
+            cam = GameObject.Find("First Person Cam");
             
         }
         
