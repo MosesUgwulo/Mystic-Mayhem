@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -26,14 +27,15 @@ namespace Player
         
         private bool _isChargingMana; // Is the player charging mana?
         
-        // private bool _isFirstFrame = true; // Is this the first frame of the game?
+
         
+
         private void Start()
         {
             _rb = GetComponent<Rigidbody>();
-            _rb.freezeRotation = true; // Freeze rotation so the player doesn't fall over
-            _readyToJump = true; // Set _readyToJump to true
-            // ResetPlayer(); // Reset the player to the spawnpoint at the start of the game
+            _rb.freezeRotation = true;
+            _readyToJump = true;
+            InvokeRepeating(nameof(ResetPlayer), 0, 3);
         }
 
         private void GetInput()
@@ -117,10 +119,12 @@ namespace Player
             return Vector3.ProjectOnPlane(_moveDirection, _slopeHit.normal).normalized;
         }
 
-        // public void ResetPlayer()
-        // {
-        //     var spawnpoint = GameObject.FindGameObjectWithTag("PlayerSpawnpoint"); // Find the spawnpoint
-        // }
+        private void ResetPlayer()
+        {
+            var spawnpoint = GameObject.Find("SpawnPoint"); // Find the spawnpoint
+            transform.position = spawnpoint.transform.position;
+            CancelInvoke(nameof(ResetPlayer));
+        }
 
         
         private void Update()
@@ -132,24 +136,11 @@ namespace Player
             if (_isGrounded) _rb.drag = drag; // If the player is grounded, apply drag
             else 
                 _rb.drag = 0; // If the player is not grounded, don't apply drag
-            
-            
-            // Pressing R returns the player to the start
-            // if (Input.GetKey(KeyCode.R))
-            // {
-            //     ResetPlayer();
-            // }
 
             if (_isChargingMana)
             {
                 ManaBar.Mana += 0.25f;
             }
-            
-            // if (_isFirstFrame) // This only runs on the first frame and then never again
-            // {
-            //     _isFirstFrame = false;
-            //     ResetPlayer();
-            // }
             
         }
 

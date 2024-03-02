@@ -29,7 +29,8 @@ public class GenerateGrid : MonoBehaviour
     {
         _folder = new GameObject("Cells");
         _folder.transform.parent = transform;
-        FloodFill();
+        // FloodFill();
+        // Generate();
     }
 
     private void Start()
@@ -157,5 +158,6 @@ public class GenerateGrid : MonoBehaviour
                 }
             }
         }
+        
     }
 }
