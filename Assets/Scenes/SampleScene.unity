@@ -3751,26 +3751,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Water Wizard
       objectReference: {fileID: 0}
-    - target: {fileID: 5501858285141654720, guid: d736753afff8be349a28f88825fb90ce,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7493242715536918896, guid: d736753afff8be349a28f88825fb90ce,
-        type: 3}
-      propertyPath: attackRange
-      value: 25
-      objectReference: {fileID: 0}
-    - target: {fileID: 7493242715536918896, guid: d736753afff8be349a28f88825fb90ce,
-        type: 3}
-      propertyPath: patrolRange
-      value: 75
-      objectReference: {fileID: 0}
-    - target: {fileID: 7493242715536918896, guid: d736753afff8be349a28f88825fb90ce,
-        type: 3}
-      propertyPath: detectionRange
-      value: 50
-      objectReference: {fileID: 0}
     - target: {fileID: 8025023617843589746, guid: d736753afff8be349a28f88825fb90ce,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3888,26 +3868,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Fire Wizard
-      objectReference: {fileID: 0}
-    - target: {fileID: 3572593800250159516, guid: 68da333a23d1cda4ebfd37cc4b424cd2,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8260155966316163027, guid: 68da333a23d1cda4ebfd37cc4b424cd2,
-        type: 3}
-      propertyPath: attackRange
-      value: 25
-      objectReference: {fileID: 0}
-    - target: {fileID: 8260155966316163027, guid: 68da333a23d1cda4ebfd37cc4b424cd2,
-        type: 3}
-      propertyPath: patrolRange
-      value: 75
-      objectReference: {fileID: 0}
-    - target: {fileID: 8260155966316163027, guid: 68da333a23d1cda4ebfd37cc4b424cd2,
-        type: 3}
-      propertyPath: detectionRange
-      value: 50
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4064,30 +4024,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 168468983490405966, guid: 6d5f70b1942f1c74493bb744f19f11c8,
-        type: 3}
-      propertyPath: attackRange
-      value: 25
-      objectReference: {fileID: 0}
-    - target: {fileID: 168468983490405966, guid: 6d5f70b1942f1c74493bb744f19f11c8,
-        type: 3}
-      propertyPath: patrolRange
-      value: 75
-      objectReference: {fileID: 0}
-    - target: {fileID: 168468983490405966, guid: 6d5f70b1942f1c74493bb744f19f11c8,
-        type: 3}
-      propertyPath: detectionRange
-      value: 50
-      objectReference: {fileID: 0}
     - target: {fileID: 1701640777863241523, guid: 6d5f70b1942f1c74493bb744f19f11c8,
         type: 3}
       propertyPath: m_Name
       value: Earth Wizard
-      objectReference: {fileID: 0}
-    - target: {fileID: 1701640777863241523, guid: 6d5f70b1942f1c74493bb744f19f11c8,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7909776477118380770, guid: 6d5f70b1942f1c74493bb744f19f11c8,
         type: 3}
@@ -4156,26 +4096,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Air Wizard
-      objectReference: {fileID: 0}
-    - target: {fileID: 5194254806635850396, guid: 8bab714c6cda72f4bb331cf639575951,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7188318657743269806, guid: 8bab714c6cda72f4bb331cf639575951,
-        type: 3}
-      propertyPath: attackRange
-      value: 25
-      objectReference: {fileID: 0}
-    - target: {fileID: 7188318657743269806, guid: 8bab714c6cda72f4bb331cf639575951,
-        type: 3}
-      propertyPath: patrolRange
-      value: 75
-      objectReference: {fileID: 0}
-    - target: {fileID: 7188318657743269806, guid: 8bab714c6cda72f4bb331cf639575951,
-        type: 3}
-      propertyPath: detectionRange
-      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 7190016928228166921, guid: 8bab714c6cda72f4bb331cf639575951,
         type: 3}
