@@ -7947,8 +7947,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: abbc025a225de2e40a6bcb82ca739753, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  width: 5
-  height: 5
+  width: 10
+  height: 10
   cellSize: 100
   cellPrefabs:
   - {fileID: 3690699913992554819, guid: fafe11fad72cae641b713f5163b005ce, type: 3}
@@ -7957,9 +7957,9 @@ MonoBehaviour:
   - {fileID: 6212278416535613471, guid: 617dc0c568443f94481ff8b61a5ae4ce, type: 3}
   villagePrefab: {fileID: 208590834724718201, guid: eb513c2d37370a840bbb3027c8406e4c,
     type: 3}
-  biome1: 0
-  biome2: 0
-  biome3: 0
+  biome1: 1
+  biome2: 1
+  biome3: 1
   biome4: 1
   percentageFilled: 10
   decay: 0.999
