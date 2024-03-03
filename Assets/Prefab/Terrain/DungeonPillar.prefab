@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 5961845157567186237}
   - component: {fileID: 7298886419355125564}
   - component: {fileID: 5641500193851376464}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: DungeonPillar
-  m_TagString: Untagged
+  m_TagString: Cell
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
