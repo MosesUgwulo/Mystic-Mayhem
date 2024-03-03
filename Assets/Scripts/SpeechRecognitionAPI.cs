@@ -6,13 +6,16 @@ using System.Text;
 using UnityEngine;
 using HuggingFace.API;
 using Spells;
+using TMPro;
+using UnityEngine.UI;
 
 public class SpeechRecognitionAPI : MonoBehaviour
 {
-    
+    public TMP_Dropdown micDropdown;
     private AudioClip _audioClip;
     private byte[] _bytes;
     private bool _isRecording;
+    private string _selectedMic;
     
     private List<MagicSystem> _spells;
     
@@ -27,7 +30,14 @@ public class SpeechRecognitionAPI : MonoBehaviour
     }
     void Start()
     {
-        
+        PopulateMicDropdown();
+    }
+
+    private void PopulateMicDropdown()
+    {
+        List<string> micOptions = new List<string>(Microphone.devices);
+        micDropdown.ClearOptions();
+        micDropdown.AddOptions(micOptions);
     }
 
     void Update()
@@ -46,16 +56,26 @@ public class SpeechRecognitionAPI : MonoBehaviour
 
     private void StartRecording()
     {
+        if (micDropdown.options.Count == 0)
+        {
+            Debug.LogError("No microphone detected");
+            return;
+        }
         Debug.Log("Recording started");
-        _audioClip = Microphone.Start(null, true, 10, 44100);
+        
+        _selectedMic = micDropdown.options[micDropdown.value].text;
+        int minFreq, maxFreq;
+        Microphone.GetDeviceCaps(_selectedMic, out minFreq, out maxFreq);
+        
+        _audioClip = Microphone.Start(_selectedMic, true, 10, maxFreq > 0 ? maxFreq : 44100);
         _isRecording = true;
     }
     
     private void StopRecording()
     {
         Debug.Log("Recording stopped");
-        var position = Microphone.GetPosition(null);
-        Microphone.End(null);
+        var position = Microphone.GetPosition(_selectedMic);
+        Microphone.End(_selectedMic);
         var samples = new float[position * _audioClip.channels];
         _audioClip.GetData(samples, 0);
         _bytes = EncodeAsWav(samples, _audioClip.frequency, _audioClip.channels);

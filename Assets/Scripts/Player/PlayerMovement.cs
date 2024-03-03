@@ -142,6 +142,12 @@ namespace Player
                 ManaBar.Mana += 0.25f;
             }
             
+            if (Input.GetKeyDown(KeyCode.I))
+            {
+                Cursor.lockState = Cursor.lockState == CursorLockMode.Locked ? CursorLockMode.None : CursorLockMode.Locked;
+                Cursor.visible = !Cursor.visible;
+            }
+            
         }
 
         private void FixedUpdate()
