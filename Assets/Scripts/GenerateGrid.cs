@@ -14,6 +14,7 @@ public class GenerateGrid : MonoBehaviour
     public float cellSize = 1.0f;
     public List<GameObject> cellPrefabs;
     public GameObject villagePrefab;
+    public GameObject dungeonPrefab;
     
     [Range(0f,1f)]
     public float biome1 = 0.2f;
@@ -36,6 +37,7 @@ public class GenerateGrid : MonoBehaviour
     public float chance = 100f;
     private const int Visited = -1;
     private const int Village = -2;
+    private const int Dungeon = -3;
 
     private GameObject _folder;
     public NavMeshSurface navMeshSurface;
@@ -132,8 +134,18 @@ public class GenerateGrid : MonoBehaviour
                 chnc *= decay;
             }
         }
-        var rand = new Vector2Int(Random.Range(0, width), Random.Range(0, height));
-        _grid[rand.x, rand.y] = Village;
+        
+        // Pick 4 random points to be dungeons
+        for (int i = 0; i < 4; i++)
+        {
+            var randDungeon = new Vector2Int(Random.Range(0, width), Random.Range(0, height));
+            _grid[randDungeon.x, randDungeon.y] = Dungeon;
+        }
+        
+        var randVillage = new Vector2Int(Random.Range(0, width), Random.Range(0, height));
+        _grid[randVillage.x, randVillage.y] = Village;
+        
+        
         BuildTerrain();
 
         // TODO: Add check to make sure all biomes exist
@@ -173,6 +185,10 @@ public class GenerateGrid : MonoBehaviour
                 else if (tileVal == Village) // Village space
                 {
                     Instantiate(villagePrefab, new Vector3(x * (cellSize), 0, y * (cellSize)), Quaternion.identity, _folder.transform);
+                }
+                else if (tileVal == Dungeon)
+                {
+                    Instantiate(dungeonPrefab, new Vector3(x * (cellSize), 0, y * (cellSize)), Quaternion.identity, _folder.transform);
                 }
                 else // Filled space
                 {
