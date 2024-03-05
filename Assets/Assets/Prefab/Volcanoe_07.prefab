@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 871622564903972438}
   - component: {fileID: 7373093105537489245}
   - component: {fileID: 3612166561408386069}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Volcanoe_07
   m_TagString: Untagged
   m_Icon: {fileID: 0}

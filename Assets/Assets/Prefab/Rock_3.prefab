@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 831682213688040161}
   - component: {fileID: 797971407488526488}
   - component: {fileID: 919065864886700345}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: EA04_Rocks_Stoolids_01d
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -132,7 +132,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2138884119041678493}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Rock_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}

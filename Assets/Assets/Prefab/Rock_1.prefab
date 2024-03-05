@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7709542934864623629}
   - component: {fileID: 7372937168753147367}
   - component: {fileID: 578684759824300284}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: EA04_Rocks_Cuboids_01b
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -132,7 +132,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2518613390944775293}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Rock_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}

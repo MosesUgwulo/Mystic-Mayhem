@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2399691929128434590}
   - component: {fileID: 869146064511690580}
   - component: {fileID: 7744588009504839097}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: node_id73
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -132,7 +132,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7360426051438339915}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: kelp 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}

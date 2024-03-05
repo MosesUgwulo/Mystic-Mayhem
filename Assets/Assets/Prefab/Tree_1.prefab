@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1121822308848417007}
   - component: {fileID: 4975483035462062231}
   - component: {fileID: 5541538704507730519}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: EA04_Trees_Cuboids_01a
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -132,7 +132,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1126659958837962419}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Tree_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -209,8 +209,60 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 50cddbd416c37ef49969baa8516595d9,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 9149615911267243444}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 50cddbd416c37ef49969baa8516595d9,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2299168500641644636}
   m_SourcePrefab: {fileID: 100100000, guid: 50cddbd416c37ef49969baa8516595d9, type: 3}
+--- !u!1 &7182904335824932056 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 50cddbd416c37ef49969baa8516595d9,
+    type: 3}
+  m_PrefabInstance: {fileID: 8029817797455933833}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &9149615911267243444
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7182904335824932056}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -652154902968161763, guid: 50cddbd416c37ef49969baa8516595d9, type: 3}
+--- !u!208 &2299168500641644636
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7182904335824932056}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 1.5000001, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 1.5000001, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!4 &7558480274221504098 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 50cddbd416c37ef49969baa8516595d9,

@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1137815731532768605}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Statue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -45,7 +45,7 @@ GameObject:
   - component: {fileID: 8136416430245773322}
   - component: {fileID: 3049289044465732364}
   - component: {fileID: 988323701319857558}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Mesh1
   m_TagString: Untagged
   m_Icon: {fileID: 0}

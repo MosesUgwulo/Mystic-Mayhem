@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1567550197615796795}
   - component: {fileID: 2190160905800501844}
   - component: {fileID: 8793196832878017263}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Anemone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -132,7 +132,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3999313417260614457}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: 2_Anemone
   m_TagString: Untagged
   m_Icon: {fileID: 0}

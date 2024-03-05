@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1281446558858271504}
   - component: {fileID: 7066776035502129520}
   - component: {fileID: 2344010622361978301}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: EA04_Trees_Stoolids_01b
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -132,7 +132,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6548913469796330509}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Tree_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 200387614374203468}
   - component: {fileID: 3617898565016096932}
   - component: {fileID: 6098474281478643227}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: EA04_Trees_Tire_01d
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -132,7 +132,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9064674864751370615}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Tree_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
