@@ -14,7 +14,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 18
   m_IsActive: 1
 --- !u!4 &3993540451458052304
 Transform:
@@ -45,7 +45,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 18
   m_IsActive: 1
 --- !u!4 &4548790559999117909
 Transform:
@@ -76,7 +76,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 18
   m_IsActive: 1
 --- !u!4 &5276117063706827075
 Transform:
@@ -107,7 +107,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 18
   m_IsActive: 1
 --- !u!4 &3858391096973554018
 Transform:
@@ -138,7 +138,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 18
   m_IsActive: 1
 --- !u!4 &8089807449644451557
 Transform:
@@ -168,12 +168,13 @@ GameObject:
   - component: {fileID: 2056883305649881913}
   - component: {fileID: 8429855350302259888}
   - component: {fileID: 5279853033984285047}
+  - component: {fileID: 2230470249176268599}
   m_Layer: 6
   m_Name: AirBiome
   m_TagString: Cell
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 18
   m_IsActive: 1
 --- !u!4 &3049337341425564612
 Transform:
@@ -283,15 +284,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d54c89468cac28d4792af327ba80ed71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rockPrefab:
-  - {fileID: 2265324860589911262, guid: 51bc56cb61f80a04baa997d2cb190e2d, type: 3}
+  airPrefabs:
   - {fileID: 7485202158118569774, guid: a031ae2aa3191cb40b66d9b96ed0ce82, type: 3}
   - {fileID: 3139880370711291872, guid: e5471153021b9a042b33c32b9f28ab64, type: 3}
   - {fileID: 6465895491816090181, guid: 7187e71c2d391f1469c638c4b3a2cc80, type: 3}
+  - {fileID: 2265324860589911262, guid: 51bc56cb61f80a04baa997d2cb190e2d, type: 3}
   - {fileID: 6084863690663429755, guid: ab9c528d0c0c9a84a972419396cf43c5, type: 3}
   - {fileID: 6189329755666313997, guid: fa4c79ca542f4854f9c4b03161190bf7, type: 3}
   - {fileID: 7120554192894285123, guid: 252c857396805ea499831939ef97ba4e, type: 3}
-  spawnPoint:
+  spawnPoints:
   - {fileID: 7342320797990291232}
   - {fileID: 7043215338463169520}
   - {fileID: 4991908526753558218}
@@ -302,6 +303,17 @@ MonoBehaviour:
   - {fileID: 2275905755035739700}
   - {fileID: 7818987315525360656}
   - {fileID: 8583690669034618137}
+--- !u!192 &2230470249176268599
+OcclusionArea:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6212278416535613471}
+  serializedVersion: 2
+  m_Size: {x: 1, y: 20, z: 1}
+  m_Center: {x: 0, y: 10, z: 0}
+  m_IsViewVolume: 1
 --- !u!1 &6421056237677871094
 GameObject:
   m_ObjectHideFlags: 0
@@ -316,7 +328,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 18
   m_IsActive: 1
 --- !u!4 &6994453368169749804
 Transform:
@@ -347,7 +359,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 18
   m_IsActive: 1
 --- !u!4 &273155255487125418
 Transform:
@@ -378,7 +390,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 18
   m_IsActive: 1
 --- !u!4 &4230802687918535949
 Transform:
@@ -409,7 +421,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 18
   m_IsActive: 1
 --- !u!4 &6434181588021896701
 Transform:
@@ -440,7 +452,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 18
   m_IsActive: 1
 --- !u!4 &3980365877368995969
 Transform:

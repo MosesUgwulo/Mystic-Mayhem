@@ -16,7 +16,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &4295131601132237282
 Transform:
@@ -54,6 +54,8 @@ MonoBehaviour:
   - {fileID: 4754437395688103653, guid: 8904e83bbdedc0948acb7f4160c2b131, type: 3}
   - {fileID: 6212278416535613471, guid: 617dc0c568443f94481ff8b61a5ae4ce, type: 3}
   villagePrefab: {fileID: 208590834724718201, guid: eb513c2d37370a840bbb3027c8406e4c,
+    type: 3}
+  dungeonPrefab: {fileID: 7743345331163177390, guid: dca1363fb705e0c42aee2a6c3740fc23,
     type: 3}
   biome1: 1
   biome2: 1

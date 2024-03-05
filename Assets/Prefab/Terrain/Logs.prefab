@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6207606261136875411}
   - component: {fileID: 1356307854054878077}
   - component: {fileID: 1582719045109412437}
+  - component: {fileID: 5934768222108800631}
   m_Layer: 0
   m_Name: Logs
   m_TagString: Air
@@ -106,3 +107,19 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -5731547941117289742, guid: 0fdfcd24afc43af459a631d007b72906, type: 3}
+--- !u!208 &5934768222108800631
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6898572467583657712}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.030000001, y: 0.028, z: 0.010000001}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: -0.018000001, z: 0}
+  m_TimeToStationary: 0.5

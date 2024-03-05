@@ -4,19 +4,19 @@ namespace Terrain
 {
     public class SpawnAirBiome : MonoBehaviour
     {
-        public GameObject[] rockPrefab;
-        public GameObject[] spawnPoint;
+        public GameObject[] airPrefabs;
+        public GameObject[] spawnPoints;
         void Start()
         {
-            foreach (var point in spawnPoint)
+            foreach (var point in spawnPoints)
             {
-                point.transform.localPosition = new Vector3(Random.Range(-0.5f, 0.5f), 0, Random.Range(-0.5f, 0.5f));
+                point.transform.localPosition = new Vector3(Random.Range(-0.4f, 0.4f), 0, Random.Range(-0.4f, 0.4f));
             }
         
-            for (int i = 0; i < spawnPoint.Length; i++)
-            {
-                int rockIndex = Random.Range(0, rockPrefab.Length);
-                Instantiate(rockPrefab[rockIndex], spawnPoint[i].transform.position, rockPrefab[rockIndex].transform.rotation);
+            for (int i = 0; i < spawnPoints.Length; i++)
+            { 
+                int airIndex = Random.Range(0, airPrefabs.Length); 
+                Instantiate(airPrefabs[airIndex], spawnPoints[i].transform.position, airPrefabs[airIndex].transform.rotation);
             }
         }
     }

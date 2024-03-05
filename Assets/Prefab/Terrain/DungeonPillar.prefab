@@ -12,12 +12,13 @@ GameObject:
   - component: {fileID: 5961845157567186237}
   - component: {fileID: 7298886419355125564}
   - component: {fileID: 5641500193851376464}
+  - component: {fileID: 2742985261416473237}
   m_Layer: 6
   m_Name: DungeonPillar
   m_TagString: Cell
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2
   m_IsActive: 1
 --- !u!4 &743435440334395969
 Transform:
@@ -106,6 +107,17 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!192 &2742985261416473237
+OcclusionArea:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7743345331163177390}
+  serializedVersion: 2
+  m_Size: {x: 1, y: 80, z: 1}
+  m_Center: {x: 0, y: 40, z: 0}
+  m_IsViewVolume: 1
 --- !u!1001 &8029817797455933833
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -188,6 +200,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Pillar.Blank
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 50cddbd416c37ef49969baa8516595d9,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
