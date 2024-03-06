@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
@@ -90,6 +91,8 @@ public class SpeechRecognitionAPI : MonoBehaviour
             string cleanedResponse = response.StripPunctuation().ToLower();
             Debug.Log("'" + cleanedResponse + "'");
             
+            LogResponseToFile(cleanedResponse);
+            
             // var spell = _spells.FirstOrDefault(s => s.phrases.Any(p => p.ToLower() == cleanedResponse) && !s.isEnemySpell);
             var spell = _spells.FirstOrDefault(s => s.phrases.Any(p => cleanedResponse.Contains(p.ToLower())) && !s.isEnemySpell);
             
@@ -130,6 +133,26 @@ public class SpeechRecognitionAPI : MonoBehaviour
             
             return memoryStream.ToArray();
         }
+    }
+
+    private void SpeechFolderExists()
+    {
+        string folderpath = Path.Combine(Directory.GetCurrentDirectory(), "Speech");
+        if (!Directory.Exists(folderpath))
+        {
+            Directory.CreateDirectory(folderpath);
+            Debug.Log("Speech folder created at: " + folderpath);
+        }
+    }
+
+    private void LogResponseToFile(string response)
+    {
+        SpeechFolderExists();
+        string folderPath = Path.Combine(Directory.GetCurrentDirectory(), "Speech");
+        string filePath = Path.Combine(folderPath, "response.txt");
+
+        using StreamWriter writer = File.AppendText(filePath);
+        writer.WriteLine($"[{DateTime.Now}] {response}");
     }
     
 }
