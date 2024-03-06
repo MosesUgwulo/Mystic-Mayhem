@@ -109,8 +109,8 @@ Material:
     - _DistortionEnabled: 1
     - _DistortionStrength: 1
     - _DistortionStrengthScaled: 0.1
-    - _DstBlend: 10
-    - _DstBlendAlpha: 10
+    - _DstBlend: 1
+    - _DstBlendAlpha: 1
     - _EmissionEnabled: 1
     - _FlipbookBlending: 1
     - _FlipbookMode: 1

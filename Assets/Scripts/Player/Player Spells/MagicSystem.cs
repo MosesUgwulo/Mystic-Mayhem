@@ -12,6 +12,7 @@ namespace Spells
         public DamageType damageType;
         public string[] phrases;
         public GameObject prefab;
+        public GameObject explosionPrefab;
         public float manaCost;
         public float cooldown;
         public float damage;

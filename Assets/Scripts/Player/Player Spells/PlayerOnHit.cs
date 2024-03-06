@@ -82,6 +82,10 @@ namespace Player.Player_Spells
                     enemy.TakeDamage(_magicSystem.damage * damageMultiplier);
                 }
                 
+                // GameObject explosion = Instantiate(_magicSystem.explosionPrefab, transform.position, Quaternion.identity);
+                // Instantiate explosion prefab and rotate it in the direction of the target
+                GameObject explosion = Instantiate(_magicSystem.explosionPrefab, transform.position, Quaternion.LookRotation(newTarget.transform.position - transform.position));
+                Destroy(explosion, 2.0f);
                 Destroy(gameObject);
             }
             
