@@ -44,6 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: abb5577634bcf8740ac92659c58f1801, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  micDropdown: {fileID: 0}
 --- !u!1 &4121790010199422996
 GameObject:
   m_ObjectHideFlags: 0
@@ -96,18 +97,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 726894ea4498c0b45a2698c11b40ad64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spellName: Fireball
   damageType: 0
   phrases:
   - Fire
   - Flame
+  - fireball
   prefab: {fileID: 5995710866260378505, guid: 18180f1022f183e43b2f9e7b914e718c, type: 3}
-  manaCost: 25
+  manaCost: 10
   cooldown: 1
   damage: 100
   speed: 50
   timer: 0
   lifeTime: 5
-  hasLearned: 0
+  hasLearned: 1
   isEnemySpell: 0
 --- !u!114 &1967760203575542848
 MonoBehaviour:
@@ -121,6 +124,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf6b9c85e2f097543b966de7d04dbaa6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spellName: 
   damageType: 0
   phrases: []
   prefab: {fileID: 5842880682675457149, guid: 0dc35eeaf38add443a802828b3aa2087, type: 3}
@@ -144,18 +148,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36567222046df1a40b18b44f97acaf68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spellName: Waterball
   damageType: 1
   phrases:
   - Splash
   - Ripple Whisper
   prefab: {fileID: 5995710866260378505, guid: 48d50156b254a4e439640c806533a39c, type: 3}
-  manaCost: 50
+  manaCost: 10
   cooldown: 1
   damage: 10
   speed: 50
   timer: 0
   lifeTime: 5
-  hasLearned: 0
+  hasLearned: 1
   isEnemySpell: 0
 --- !u!114 &1657932633599674530
 MonoBehaviour:
@@ -169,6 +174,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79b1780d02b1ff6428f543c0d013ccb6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spellName: 
   damageType: 1
   phrases: []
   prefab: {fileID: 7821495328472025251, guid: cc6a11ac9efadc04a98c250ff27a8b2e, type: 3}
@@ -192,10 +198,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 778b79a2139f07e4caa0cb746a2eb8cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spellName: Airball
   damageType: 3
   phrases:
   - Zephyr
-  - Gust
+  - ghost
+  - gust
+  - zepher
   prefab: {fileID: 6998388060417405259, guid: 1228b1ffd98a8cc40a13bca86eef5abd, type: 3}
   manaCost: 10
   cooldown: 1
@@ -203,7 +212,7 @@ MonoBehaviour:
   speed: 60
   timer: 0
   lifeTime: 5
-  hasLearned: 0
+  hasLearned: 1
   isEnemySpell: 0
 --- !u!114 &6558903573534064744
 MonoBehaviour:
@@ -217,6 +226,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 328a6b853a6eb9b449f9afdaf02f03b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spellName: 
   damageType: 3
   phrases: []
   prefab: {fileID: 4409552130529031764, guid: c7978c0b5dede24458e5569ea7d47ca6, type: 3}
@@ -240,18 +250,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e68d5d19098bb8429d3545dd2f93bec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spellName: Earthball
   damageType: 2
   phrases:
-  - Terra
   - Quake
+  - Quick
   prefab: {fileID: 5036614767299039484, guid: 6e38f639001521644be4f375428d975b, type: 3}
-  manaCost: 100
+  manaCost: 10
   cooldown: 1
   damage: 10
   speed: 30
   timer: 0
   lifeTime: 5
-  hasLearned: 0
+  hasLearned: 1
   isEnemySpell: 0
 --- !u!114 &3911986728224738496
 MonoBehaviour:
@@ -265,6 +276,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 403216f6db36d0342b92ea6508fd60e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spellName: 
   damageType: 2
   phrases: []
   prefab: {fileID: 7500578738342372655, guid: b1a87e07fc023df4ea6f743d08ab93e1, type: 3}
@@ -288,9 +300,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f456cadccd81d18409e7c163026f26e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spellName: 
   damageType: 5
   phrases:
   - Goodbye
+  - bye
+  - good
   prefab: {fileID: 0}
   manaCost: 0
   cooldown: 0
@@ -298,7 +313,7 @@ MonoBehaviour:
   speed: 0
   timer: 0
   lifeTime: 0
-  hasLearned: 0
+  hasLearned: 1
   isEnemySpell: 0
 --- !u!1 &6932450355338773108
 GameObject:
@@ -332,6 +347,7 @@ Transform:
   m_Children:
   - {fileID: 2612453509503937330}
   - {fileID: 940633027082361663}
+  - {fileID: 8406133075956609906}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &6360068299854136629
@@ -348,4 +364,78 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   magicSystem: {fileID: 573065164414424905}
   player: {fileID: 0}
-  speechRecognitionAPI: {fileID: 4012368410125178697}
+  textMeshPro: {fileID: 0}
+--- !u!1001 &7336453906543708605
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 3818647505380852562}
+    m_Modifications:
+    - target: {fileID: 1258972199371324111, guid: bb57dc1cba7a8b0448792d6aa5d3d19c,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.41596264
+      objectReference: {fileID: 0}
+    - target: {fileID: 1258972199371324111, guid: bb57dc1cba7a8b0448792d6aa5d3d19c,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 4.5601597
+      objectReference: {fileID: 0}
+    - target: {fileID: 1258972199371324111, guid: bb57dc1cba7a8b0448792d6aa5d3d19c,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 15.756463
+      objectReference: {fileID: 0}
+    - target: {fileID: 1258972199371324111, guid: bb57dc1cba7a8b0448792d6aa5d3d19c,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1258972199371324111, guid: bb57dc1cba7a8b0448792d6aa5d3d19c,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1258972199371324111, guid: bb57dc1cba7a8b0448792d6aa5d3d19c,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1258972199371324111, guid: bb57dc1cba7a8b0448792d6aa5d3d19c,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1258972199371324111, guid: bb57dc1cba7a8b0448792d6aa5d3d19c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1258972199371324111, guid: bb57dc1cba7a8b0448792d6aa5d3d19c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1258972199371324111, guid: bb57dc1cba7a8b0448792d6aa5d3d19c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7392033782080077713, guid: bb57dc1cba7a8b0448792d6aa5d3d19c,
+        type: 3}
+      propertyPath: m_Name
+      value: Speech
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: bb57dc1cba7a8b0448792d6aa5d3d19c, type: 3}
+--- !u!4 &8406133075956609906 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1258972199371324111, guid: bb57dc1cba7a8b0448792d6aa5d3d19c,
+    type: 3}
+  m_PrefabInstance: {fileID: 7336453906543708605}
+  m_PrefabAsset: {fileID: 0}

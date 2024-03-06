@@ -10,6 +10,7 @@ namespace Player
         public LayerMask groundMask;
         public Transform orientation;
         public float moveSpeed;
+        public float decelerationRate;
         public float jumpForce;
         public float jumpCooldown;
         public float airMultiplier;
@@ -54,7 +55,10 @@ namespace Player
         private void Move()
         {
             _moveDirection = orientation.forward * _verticalInput + orientation.right * _horizontalInput; // Calculate the move direction
-
+            
+            // Add gravity to the player
+            if (!_isGrounded) _rb.AddForce(Vector3.down * 10f, ForceMode.Acceleration);
+            
             if (OnSlope() && !_exitingSlope)
             {
                 _rb.AddForce(GetSlopeDirection() * (moveSpeed * 20f), ForceMode.Force);
@@ -64,9 +68,18 @@ namespace Player
                     _rb.AddForce(Vector3.down * 80f, ForceMode.Force);
                 }
             }
-            
-            if (_isGrounded) _rb.AddForce(_moveDirection.normalized * (moveSpeed * 10f), ForceMode.Force); // Add force to the player
-            else if (!_isGrounded) _rb.AddForce(_moveDirection.normalized * (moveSpeed * 10f * airMultiplier), ForceMode.Force); // Add force to the player with air multiplier
+
+            if (_horizontalInput != 0 || _verticalInput != 0)
+            {
+                if (_isGrounded) _rb.AddForce(_moveDirection.normalized * (moveSpeed * 10f), ForceMode.Force); // Add force to the player
+                else if (!_isGrounded) _rb.AddForce(_moveDirection.normalized * (moveSpeed * 10f * airMultiplier), ForceMode.Force); // Add force to the player with air multiplier
+            }
+            else
+            {
+                Vector3 horizontalVelocity = new Vector3(_rb.velocity.x, 0, _rb.velocity.z);
+                Vector3 decelerationVelocity = Vector3.Lerp(horizontalVelocity, Vector3.zero, Time.deltaTime * decelerationRate);
+                _rb.velocity = new Vector3(decelerationVelocity.x, _rb.velocity.y, decelerationVelocity.z);
+            }
 
             _rb.useGravity = !OnSlope();
         }

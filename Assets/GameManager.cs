@@ -8,15 +8,20 @@ using Player;
 using Spells;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Serialization;
 using Ping = System.Net.NetworkInformation.Ping;
 
 public class GameManager : MonoBehaviour
 {
     
     public static GameManager instance;
+    public SpeechRecognition speechRecognition;
+    public SpeechRecognitionAPI speechRecognitionAPI;
     public MagicSystem magicSystem;
     public GameObject player;
-    public TMP_Text textMeshPro;
+    public TMP_Text connectedText;
+    private float _timer;
+    private float _timeToPing = 30f;
     private void Awake()
     {
         if (instance == null)
@@ -34,20 +39,22 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         player = GameObject.Find("Player");
+        speechRecognition = GameObject.Find("Speech").GetComponent<SpeechRecognition>();
+        speechRecognitionAPI = GameObject.Find("HuggingFaceSpeechAPI").GetComponent<SpeechRecognitionAPI>();
         
         if (IsInternetConnected())
         {
-            GameObject.Find("HuggingFaceSpeechAPI").GetComponent<SpeechRecognitionAPI>().enabled = true;
-            GameObject.Find("Speech").GetComponent<SpeechRecognition>().enabled = false;
+            speechRecognitionAPI.enabled = true;
+            speechRecognition.enabled = false;
         }
         
         if (!IsInternetConnected())
         {
-            GameObject.Find("HuggingFaceSpeechAPI").GetComponent<SpeechRecognitionAPI>().enabled = false;
-            GameObject.Find("Speech").GetComponent<SpeechRecognition>().enabled = true;
+            speechRecognitionAPI.enabled = false;
+            speechRecognition.enabled = true;
         }
         
-        textMeshPro.text = IsInternetConnected() ? "Connected" : "Not Connected";
+        connectedText.text = IsInternetConnected() ? "Connected" : "Not Connected";
     }
 
     private static bool IsInternetConnected()
@@ -77,6 +84,29 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // Ping every 30 seconds to check if the internet is connected or not and switch the speech recognition system accordingly
+        _timer += Time.deltaTime;
+        if (_timer > _timeToPing)
+        {
+            Debug.Log("Pinging");
+            _timer = 0;
+            if (IsInternetConnected())
+            {
+                speechRecognitionAPI.enabled = true;
+                speechRecognition.enabled = false;
+                connectedText.text = "Connected";
+            }
+            else
+            {
+                speechRecognitionAPI.enabled = false;
+                speechRecognition.enabled = true;
+                connectedText.text = "Not Connected";
+            }
+        }
         
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Application.Quit();
+        }
     }
 }

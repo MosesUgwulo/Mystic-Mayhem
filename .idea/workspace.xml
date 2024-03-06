@@ -4,21 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7099bd2d-00b0-46d1-bc3c-aab47e191174" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefab/Air Wizard.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefab/Air Wizard.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefab/Earth Wizard.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefab/Earth Wizard.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefab/Fire Wizard.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefab/Fire Wizard.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefab/Water Wizard.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefab/Water Wizard.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/Air.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/Air.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/Earth.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/Earth.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/Enemy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/Enemy.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/Fire.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/Fire.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/Water.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/Water.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GenerateGrid.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GenerateGrid.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerMovement.cs" afterDir="false" />
-    </list>
+    <list default="true" id="7099bd2d-00b0-46d1-bc3c-aab47e191174" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -60,6 +46,7 @@
       <workItem from="1705520889786" duration="3042000" />
       <workItem from="1707829818926" duration="32000" />
       <workItem from="1707829940867" duration="1335000" />
+      <workItem from="1709669511090" duration="44000" />
     </task>
     <servers />
   </component>
