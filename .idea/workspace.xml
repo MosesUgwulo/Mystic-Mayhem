@@ -4,7 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7099bd2d-00b0-46d1-bc3c-aab47e191174" name="Changes" comment="" />
+    <list default="true" id="7099bd2d-00b0-46d1-bc3c-aab47e191174" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/Prefab/Cube.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefab/Cube.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/LearnSpell.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefab/Terrain/EarthBiome.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefab/Terrain/EarthBiome.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Mystic Mayhem.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Mystic Mayhem.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Obby.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Obby.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Speech/response.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Speech/response.txt" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -47,6 +56,7 @@
       <workItem from="1707829818926" duration="32000" />
       <workItem from="1707829940867" duration="1335000" />
       <workItem from="1709669511090" duration="44000" />
+      <workItem from="1709841219257" duration="113000" />
     </task>
     <servers />
   </component>

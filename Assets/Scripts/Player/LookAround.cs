@@ -5,6 +5,7 @@ namespace Player
     public class LookAround : MonoBehaviour
     {
         public Transform orientation;
+        public Transform player;
         public float mouseSensitivityX;
         public float mouseSensitivityY;
         private float _xRotation;
@@ -29,6 +30,7 @@ namespace Player
             
             transform.rotation = Quaternion.Euler(_xRotation, _yRotation, 0);
             orientation.rotation = Quaternion.Euler(0, _yRotation, 0);
+            player.rotation = Quaternion.Euler(0, _yRotation, 0);
         }
     }
 }

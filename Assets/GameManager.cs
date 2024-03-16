@@ -33,6 +33,8 @@ public class GameManager : MonoBehaviour
         {
             Destroy(gameObject); 
         }
+        magicSystem = GameObject.Find("MagicSystem").GetComponent<MagicSystem>();
+
     }
 
     // Start is called before the first frame update

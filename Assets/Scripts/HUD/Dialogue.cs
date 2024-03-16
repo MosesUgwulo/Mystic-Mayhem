@@ -1,0 +1,13 @@
+using UnityEngine;
+
+namespace HUD
+{
+    [System.Serializable]
+    public class Dialogue
+    {
+        public string name;
+        
+        [TextArea(5, 10)]
+        public string[] sentences;
+    }
+}

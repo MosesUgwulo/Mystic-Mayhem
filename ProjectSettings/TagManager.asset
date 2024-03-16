@@ -13,6 +13,7 @@ TagManager:
   - Earth
   - Air
   - Spell
+  - Interact
   layers:
   - Default
   - TransparentFX

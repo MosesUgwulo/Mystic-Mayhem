@@ -18,6 +18,7 @@ namespace Player
         public float drag;
         public float maxSlopeAngle;
         private Rigidbody _rb;
+        private GameObject _interactableNpc;
         private Vector3 _moveDirection;
         private RaycastHit _slopeHit;
         private float _horizontalInput;
@@ -161,6 +162,26 @@ namespace Player
                 Cursor.visible = !Cursor.visible;
             }
             
+            if (Input.GetKeyDown(KeyCode.E) && _interactableNpc != null)
+            {
+                _interactableNpc.GetComponent<HUD.Interactable>().Interact();
+            }
+        }
+
+        private void OnTriggerEnter(Collider other)
+        {
+            if (other.gameObject.CompareTag("Interact"))
+            {
+                _interactableNpc = other.gameObject;
+            }
+        }
+
+        private void OnTriggerExit(Collider other)
+        {
+            if (other.gameObject.CompareTag("Interact"))
+            {
+                _interactableNpc = null;
+            }
         }
 
         private void FixedUpdate()
