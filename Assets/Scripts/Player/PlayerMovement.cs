@@ -19,6 +19,8 @@ namespace Player
         public float maxSlopeAngle;
         private Rigidbody _rb;
         private GameObject _interactableNpc;
+        private Animator _anim;
+        private AnimatorStateInfo _info;
         private Vector3 _moveDirection;
         private RaycastHit _slopeHit;
         private float _horizontalInput;
@@ -28,12 +30,13 @@ namespace Player
         private bool _exitingSlope;
         
         private bool _isChargingMana; // Is the player charging mana?
-        
-
-        
+        private static readonly int IsMoving = Animator.StringToHash("IsMoving");
+        private static readonly int IsJumping = Animator.StringToHash("IsJumping");
+        private static readonly int IsCharging = Animator.StringToHash("IsCharging");
 
         private void Start()
         {
+            _anim = GetComponent<Animator>();
             _rb = GetComponent<Rigidbody>();
             _rb.freezeRotation = true;
             _readyToJump = true;
@@ -49,6 +52,7 @@ namespace Player
             {
                 _readyToJump = false; // Set _readyToJump to false
                 Jump(); // Call the Jump function
+                _anim.Play("Jumping", 0, 0.3f);
                 Invoke(nameof(ResetJump), jumpCooldown); // This allows the player to keep jumping while the button is held down
             }
     }
@@ -72,14 +76,19 @@ namespace Player
 
             if (_horizontalInput != 0 || _verticalInput != 0)
             {
-                if (_isGrounded) _rb.AddForce(_moveDirection.normalized * (moveSpeed * 10f), ForceMode.Force); // Add force to the player
+                _anim.SetBool(IsMoving, true);
+                if (_isGrounded)
+                {
+                    _rb.AddForce(_moveDirection.normalized * (moveSpeed * 10f), ForceMode.Force);
+                } // Add force to the player
                 else if (!_isGrounded) _rb.AddForce(_moveDirection.normalized * (moveSpeed * 10f * airMultiplier), ForceMode.Force); // Add force to the player with air multiplier
             }
-            else
+            else // If the player is not pressing any movement keys
             {
                 Vector3 horizontalVelocity = new Vector3(_rb.velocity.x, 0, _rb.velocity.z);
                 Vector3 decelerationVelocity = Vector3.Lerp(horizontalVelocity, Vector3.zero, Time.deltaTime * decelerationRate);
                 _rb.velocity = new Vector3(decelerationVelocity.x, _rb.velocity.y, decelerationVelocity.z);
+                _anim.SetBool(IsMoving, false);
             }
 
             _rb.useGravity = !OnSlope();
@@ -140,26 +149,41 @@ namespace Player
             CancelInvoke(nameof(ResetPlayer));
         }
 
+        private void Jumping()
+        {
+            if (_isGrounded)
+            {
+                _anim.SetBool(IsJumping, false);
+            }
+            else
+            {
+                _anim.SetBool(IsJumping, true);
+            }
+        }
+
         
         private void Update()
         {
             _isGrounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.2f, groundMask); // Check if the player is grounded
             GetInput();
             LimitSpeed();
-            
-            if (_isGrounded) _rb.drag = drag; // If the player is grounded, apply drag
+            Jumping();
+
+            if (_isGrounded)
+            {
+                _rb.drag = drag;
+            } // If the player is grounded, apply drag
             else 
                 _rb.drag = 0; // If the player is not grounded, don't apply drag
 
             if (_isChargingMana)
             {
                 ManaBar.Mana += 0.25f;
+                _anim.SetBool(IsCharging, true);
             }
-            
-            if (Input.GetKeyDown(KeyCode.I))
+            else
             {
-                Cursor.lockState = Cursor.lockState == CursorLockMode.Locked ? CursorLockMode.None : CursorLockMode.Locked;
-                Cursor.visible = !Cursor.visible;
+                _anim.SetBool(IsCharging, false);
             }
             
             if (Input.GetKeyDown(KeyCode.E) && _interactableNpc != null)

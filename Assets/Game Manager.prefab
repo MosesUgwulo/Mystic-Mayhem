@@ -104,6 +104,7 @@ MonoBehaviour:
   - Flame
   - fireball
   prefab: {fileID: 5995710866260378505, guid: 18180f1022f183e43b2f9e7b914e718c, type: 3}
+  explosionPrefab: {fileID: 0}
   manaCost: 10
   cooldown: 1
   damage: 100
@@ -128,6 +129,7 @@ MonoBehaviour:
   damageType: 0
   phrases: []
   prefab: {fileID: 5842880682675457149, guid: 0dc35eeaf38add443a802828b3aa2087, type: 3}
+  explosionPrefab: {fileID: 0}
   manaCost: 0
   cooldown: 2
   damage: 5
@@ -154,6 +156,7 @@ MonoBehaviour:
   - Splash
   - Ripple Whisper
   prefab: {fileID: 5995710866260378505, guid: 48d50156b254a4e439640c806533a39c, type: 3}
+  explosionPrefab: {fileID: 0}
   manaCost: 10
   cooldown: 1
   damage: 10
@@ -178,6 +181,7 @@ MonoBehaviour:
   damageType: 1
   phrases: []
   prefab: {fileID: 7821495328472025251, guid: cc6a11ac9efadc04a98c250ff27a8b2e, type: 3}
+  explosionPrefab: {fileID: 0}
   manaCost: 0
   cooldown: 2
   damage: 10
@@ -206,6 +210,7 @@ MonoBehaviour:
   - gust
   - zepher
   prefab: {fileID: 6998388060417405259, guid: 1228b1ffd98a8cc40a13bca86eef5abd, type: 3}
+  explosionPrefab: {fileID: 0}
   manaCost: 10
   cooldown: 1
   damage: 10
@@ -230,6 +235,7 @@ MonoBehaviour:
   damageType: 3
   phrases: []
   prefab: {fileID: 4409552130529031764, guid: c7978c0b5dede24458e5569ea7d47ca6, type: 3}
+  explosionPrefab: {fileID: 0}
   manaCost: 0
   cooldown: 2
   damage: 15
@@ -256,6 +262,7 @@ MonoBehaviour:
   - Quake
   - Quick
   prefab: {fileID: 5036614767299039484, guid: 6e38f639001521644be4f375428d975b, type: 3}
+  explosionPrefab: {fileID: 0}
   manaCost: 10
   cooldown: 1
   damage: 10
@@ -280,6 +287,7 @@ MonoBehaviour:
   damageType: 2
   phrases: []
   prefab: {fileID: 7500578738342372655, guid: b1a87e07fc023df4ea6f743d08ab93e1, type: 3}
+  explosionPrefab: {fileID: 0}
   manaCost: 0
   cooldown: 2
   damage: 16
@@ -307,6 +315,7 @@ MonoBehaviour:
   - bye
   - good
   prefab: {fileID: 0}
+  explosionPrefab: {fileID: 0}
   manaCost: 0
   cooldown: 0
   damage: 0
@@ -362,9 +371,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a788b2637002a1a4c92d3ffae4346391, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speechRecognition: {fileID: 0}
+  speechRecognitionAPI: {fileID: 0}
   magicSystem: {fileID: 573065164414424905}
   player: {fileID: 0}
-  textMeshPro: {fileID: 0}
+  connectedText: {fileID: 0}
 --- !u!1001 &7336453906543708605
 PrefabInstance:
   m_ObjectHideFlags: 0
