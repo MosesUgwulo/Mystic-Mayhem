@@ -17,16 +17,16 @@ namespace Terrain
         public GameObject dungeonPrefab;
     
         [Range(0f,1f)]
-        public float biome1 = 0.2f;
+        public float fireBiome = 0.2f;
     
         [Range(0f,1f)]
-        public float biome2 = 0.4f;
+        public float earthBiome = 0.4f;
     
         [Range(0f,1f)]
-        public float biome3 = 0.6f;
+        public float waterBiome = 0.6f;
     
         [Range(0f,1f)]
-        public float biome4 = 0.8f;
+        public float airBiome = 0.8f;
     
         [Range(0f,10f)]
         public float percentageFilled = 0.8f;
@@ -87,10 +87,10 @@ namespace Terrain
                 var tileID = Random.Range(1, cellPrefabs.Count+1);
 
                 float spawnChance = Random.value;
-                if (tileID == 1 && spawnChance > biome1) continue;
-                if (tileID == 2 && spawnChance > biome2) continue;
-                if (tileID == 3 && spawnChance > biome3) continue;
-                if (tileID == 4 && spawnChance > biome4) continue;
+                if (tileID == 1 && spawnChance > fireBiome) continue;
+                if (tileID == 2 && spawnChance > earthBiome) continue;
+                if (tileID == 3 && spawnChance > waterBiome) continue;
+                if (tileID == 4 && spawnChance > airBiome) continue;
             
                 var deque = new LinkedList<Vector2Int>();
                 deque.AddLast(new Vector2Int(Random.Range(0, width), Random.Range(0, height)));

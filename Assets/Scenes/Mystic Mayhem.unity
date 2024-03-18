@@ -1062,6 +1062,73 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!1 &996681853
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 996681855}
+  - component: {fileID: 996681854}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &996681854
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 996681853}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: caf786acf0e82ad46becdad8bcb8b11c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: Fire
+    clip: {fileID: 8300000, guid: e2761d03966bb9640ba23402e4b36941, type: 3}
+    volume: 0.2
+    pitch: 1
+    loop: 1
+    playOnAwake: 0
+    source: {fileID: 0}
+  - name: Water
+    clip: {fileID: 8300000, guid: a5f8a76f1baf995468e9078f0a428525, type: 3}
+    volume: 0.2
+    pitch: 1
+    loop: 1
+    playOnAwake: 0
+    source: {fileID: 0}
+  - name: Village
+    clip: {fileID: 8300000, guid: be8fd48503d2fc64e86c7f48896cd893, type: 3}
+    volume: 0.1
+    pitch: 1
+    loop: 1
+    playOnAwake: 0
+    source: {fileID: 0}
+  _currentBiome: 
+--- !u!4 &996681855
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 996681853}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1008825371 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5787931740531347474, guid: 3bc324138da9e27449b5100679c3e468,
@@ -6513,12 +6580,6 @@ Animator:
     type: 3}
   m_PrefabInstance: {fileID: 4306929556305948852}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1868764814 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2096325589176492915, guid: 3bc324138da9e27449b5100679c3e468,
-    type: 3}
-  m_PrefabInstance: {fileID: 8489054528017797683}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1992577063 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2763785401802414834, guid: f4f2b71b1e7e4b94db8857e68c109e90,
@@ -7382,12 +7443,32 @@ PrefabInstance:
     - target: {fileID: 3855673249793768334, guid: d73485e9c38d2254fa70d1c77431e26f,
         type: 3}
       propertyPath: width
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3855673249793768334, guid: d73485e9c38d2254fa70d1c77431e26f,
         type: 3}
       propertyPath: height
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3855673249793768334, guid: d73485e9c38d2254fa70d1c77431e26f,
+        type: 3}
+      propertyPath: airBiome
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3855673249793768334, guid: d73485e9c38d2254fa70d1c77431e26f,
+        type: 3}
+      propertyPath: fireBiome
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3855673249793768334, guid: d73485e9c38d2254fa70d1c77431e26f,
+        type: 3}
+      propertyPath: earthBiome
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3855673249793768334, guid: d73485e9c38d2254fa70d1c77431e26f,
+        type: 3}
+      propertyPath: waterBiome
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4295131601132237282, guid: d73485e9c38d2254fa70d1c77431e26f,
         type: 3}
@@ -7455,18 +7536,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 8489054528017797683}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &7119353092882489825
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1868764814}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21f1fef5444116f4b8d9e83f04f5f1f4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!95 &7119353092882489829 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 3862264076436135885, guid: 3bc324138da9e27449b5100679c3e468,
@@ -7636,7 +7705,7 @@ PrefabInstance:
     - target: {fileID: 3485325575479245975, guid: 3bc324138da9e27449b5100679c3e468,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -43.31
+      value: -1151
       objectReference: {fileID: 0}
     - target: {fileID: 3485325575479245975, guid: 3bc324138da9e27449b5100679c3e468,
         type: 3}
@@ -7646,7 +7715,7 @@ PrefabInstance:
     - target: {fileID: 3485325575479245975, guid: 3bc324138da9e27449b5100679c3e468,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -4.94
+      value: -3391
       objectReference: {fileID: 0}
     - target: {fileID: 3485325575479245975, guid: 3bc324138da9e27449b5100679c3e468,
         type: 3}
@@ -7691,16 +7760,12 @@ PrefabInstance:
     - target: {fileID: 9172824754874877840, guid: 3bc324138da9e27449b5100679c3e468,
         type: 3}
       propertyPath: playerHeight
-      value: 0.1
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 2096325589176492915, guid: 3bc324138da9e27449b5100679c3e468,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 7119353092882489825}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3bc324138da9e27449b5100679c3e468, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
@@ -7723,3 +7788,4 @@ SceneRoots:
   - {fileID: 895272528574857872}
   - {fileID: 4111295923872213913}
   - {fileID: 3655360123787993552}
+  - {fileID: 996681855}
