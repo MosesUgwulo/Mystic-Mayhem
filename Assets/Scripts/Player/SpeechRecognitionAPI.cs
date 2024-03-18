@@ -7,17 +7,18 @@ using HuggingFace.API;
 using Spells;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace Player
 {
     public class SpeechRecognitionAPI : MonoBehaviour
     {
         public TMP_Dropdown micDropdown;
+        [FormerlySerializedAs("_anim")] public Animator anim;
         private AudioClip _audioClip;
         private byte[] _bytes;
         private bool _isRecording;
         private string _selectedMic;
-        public Animator _anim;
     
         private List<MagicSystem> _spells;
         private static readonly int CastingSpellT = Animator.StringToHash("CastingSpell_T");
@@ -101,7 +102,7 @@ namespace Player
                 if (spell == null)
                     return;
                 spell.CastSpell();
-                _anim.SetTrigger(CastingSpellT);
+                anim.SetTrigger(CastingSpellT);
             }, error =>
             {
                 Debug.LogError(error);

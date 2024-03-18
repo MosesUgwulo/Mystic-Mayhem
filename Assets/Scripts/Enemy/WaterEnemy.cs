@@ -8,8 +8,7 @@ namespace Enemy
 {
     public class WaterEnemy : Enemy
     {
-        private List<MagicSystem> _spells;
-        public float timer;
+        private float _timer;
         void Start()
         {
             GameObject magicSystem = GameObject.Find("MagicSystem");
@@ -19,6 +18,10 @@ namespace Enemy
             
             player = GameObject.Find("Player").transform;
             agent = GetComponent<NavMeshAgent>();
+            agent.speed = walkSpeed;
+            anim = GetComponent<Animator>();
+            
+            if (anim == null) anim = GetComponent<Animator>();
         }
 
         public override void SetPatrolTarget()
@@ -58,7 +61,11 @@ namespace Enemy
             
             var spell = spells[Random.Range(0, spells.Count)];
             spell.CastSpell(castingPoint.gameObject);
-            timer = spell.cooldown;
+            _timer = spell.cooldown;
+            
+            anim.Play("Attack", 0, 0f);
+            anim.SetBool(IsChasing, false);
+            anim.SetTrigger(CastingSpellB);
         }
         
         public override void TakeDamage(float damage)
@@ -69,18 +76,33 @@ namespace Enemy
         
         void Update()
         {
-            if (timer > 0)
+            if (_timer > 0)
             {
-                timer -= Time.deltaTime;
+                _timer -= Time.deltaTime;
             }
             
             var position = transform.position;
             isPlayerInRange = Physics.CheckSphere(position, detectionRange, playerMask);
             isPlayerInAttackRange = Physics.CheckSphere(position, attackRange, playerMask);
             
-            if (!isPlayerInRange && !isPlayerInAttackRange) Patrolling();
-            if (isPlayerInRange && !isPlayerInAttackRange) Chasing();
-            if (isPlayerInAttackRange && timer <= 0) Attack();
+            if (!isPlayerInRange && !isPlayerInAttackRange)
+            {
+                agent.isStopped = false;
+                anim.SetBool(CanSee, false);
+                Patrolling();
+                anim.SetBool(IsPatrolling, true);
+            }
+
+            if (isPlayerInRange && !isPlayerInAttackRange)
+            {
+                agent.isStopped = false;
+                anim.SetBool(IsPatrolling, false);
+                Chasing();
+                anim.SetBool(CanSee, true);
+                anim.SetBool(IsChasing, true);
+            }
+            
+            if (isPlayerInAttackRange && _timer <= 0) Attack();
         }
         
         private void OnDrawGizmosSelected()

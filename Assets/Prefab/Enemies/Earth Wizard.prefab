@@ -19,7 +19,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7909776477118380770
 Transform:
   m_ObjectHideFlags: 0
@@ -113,6 +113,7 @@ MonoBehaviour:
   playerMask:
     serializedVersion: 2
     m_Bits: 256
+  anim: {fileID: 0}
   patrolRange: 75
   detectionRange: 50
   attackRange: 25

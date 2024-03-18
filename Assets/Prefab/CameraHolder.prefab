@@ -151,6 +151,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   orientation: {fileID: 0}
+  player: {fileID: 0}
   mouseSensitivityX: 400
   mouseSensitivityY: 400
 --- !u!1 &5376918143796513862

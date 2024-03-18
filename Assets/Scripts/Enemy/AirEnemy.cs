@@ -18,6 +18,10 @@ namespace Enemy
             
             player = GameObject.Find("Player").transform;
             agent = GetComponent<NavMeshAgent>();
+            agent.speed = walkSpeed;
+            anim = GetComponent<Animator>();
+
+            if (anim == null) anim = GetComponent<Animator>();
         }
 
         public override void SetPatrolTarget()
@@ -58,6 +62,10 @@ namespace Enemy
             var spell = spells[Random.Range(0, spells.Count)];
             spell.CastSpell(castingPoint.gameObject);
             _timer = spell.cooldown;
+            
+            anim.Play("Attack", 0, 0f);
+            anim.SetBool(IsChasing, false);
+            anim.SetTrigger(CastingSpellB);
         }
 
         public override void TakeDamage(float damage)
@@ -77,8 +85,23 @@ namespace Enemy
             isPlayerInRange = Physics.CheckSphere(position, detectionRange, playerMask);
             isPlayerInAttackRange = Physics.CheckSphere(position, attackRange, playerMask);
             
-            if (!isPlayerInRange && !isPlayerInAttackRange) Patrolling();
-            if (isPlayerInRange && !isPlayerInAttackRange) Chasing();
+            if (!isPlayerInRange && !isPlayerInAttackRange)
+            {
+                agent.isStopped = false;
+                anim.SetBool(CanSee, false);
+                Patrolling();
+                anim.SetBool(IsPatrolling, true);
+            }
+
+            if (isPlayerInRange && !isPlayerInAttackRange)
+            {
+                agent.isStopped = false;
+                anim.SetBool(IsPatrolling, false);
+                Chasing();
+                anim.SetBool(CanSee, true);
+                anim.SetBool(IsChasing, true);
+            }
+            
             if (isPlayerInAttackRange && _timer <= 0) Attack();
         }
         
