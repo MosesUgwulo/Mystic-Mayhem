@@ -10,18 +10,7 @@ namespace Terrain
         {
             if (other.CompareTag("Player"))
             {
-                if (!AudioManager.instance.IsPlaying(biomeName))
-                {
-                    AudioManager.instance.PlayAmbient(biomeName);
-                }
-            }
-        }
-
-        private void OnTriggerExit(Collider other)
-        {
-            if (other.CompareTag("Player"))
-            {
-                AudioManager.instance.TryPause(biomeName);
+                AudioManager.instance.PlayAmbient(biomeName);
             }
         }
     }

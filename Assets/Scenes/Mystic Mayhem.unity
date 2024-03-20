@@ -1062,73 +1062,6 @@ Mesh:
     offset: 0
     size: 0
     path: 
---- !u!1 &996681853
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 996681855}
-  - component: {fileID: 996681854}
-  m_Layer: 0
-  m_Name: AudioManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &996681854
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 996681853}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: caf786acf0e82ad46becdad8bcb8b11c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sounds:
-  - name: Fire
-    clip: {fileID: 8300000, guid: e2761d03966bb9640ba23402e4b36941, type: 3}
-    volume: 0.2
-    pitch: 1
-    loop: 1
-    playOnAwake: 0
-    source: {fileID: 0}
-  - name: Water
-    clip: {fileID: 8300000, guid: a5f8a76f1baf995468e9078f0a428525, type: 3}
-    volume: 0.2
-    pitch: 1
-    loop: 1
-    playOnAwake: 0
-    source: {fileID: 0}
-  - name: Village
-    clip: {fileID: 8300000, guid: be8fd48503d2fc64e86c7f48896cd893, type: 3}
-    volume: 0.1
-    pitch: 1
-    loop: 1
-    playOnAwake: 0
-    source: {fileID: 0}
-  _currentBiome: 
---- !u!4 &996681855
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 996681853}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1008825371 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5787931740531347474, guid: 3bc324138da9e27449b5100679c3e468,
@@ -7211,6 +7144,164 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c55add240e2c30e4fbddb9e9d5b5242e, type: 3}
+--- !u!1001 &4988686045677518122
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2243209454916702876, guid: 045acfa3267de2641b9e07f22ad8b762,
+        type: 3}
+      propertyPath: sounds.Array.size
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 2243209454916702876, guid: 045acfa3267de2641b9e07f22ad8b762,
+        type: 3}
+      propertyPath: sounds.Array.data[0].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 4fab354e4b3ed2048ac86d8a5e42ebb8, type: 3}
+    - target: {fileID: 2243209454916702876, guid: 045acfa3267de2641b9e07f22ad8b762,
+        type: 3}
+      propertyPath: sounds.Array.data[1].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: adcfe9da60421c24f840e894912f20f8, type: 3}
+    - target: {fileID: 2243209454916702876, guid: 045acfa3267de2641b9e07f22ad8b762,
+        type: 3}
+      propertyPath: sounds.Array.data[5].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: e62444ff6dc6335438d864c75c84dc37, type: 3}
+    - target: {fileID: 2243209454916702876, guid: 045acfa3267de2641b9e07f22ad8b762,
+        type: 3}
+      propertyPath: sounds.Array.data[5].loop
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2243209454916702876, guid: 045acfa3267de2641b9e07f22ad8b762,
+        type: 3}
+      propertyPath: sounds.Array.data[5].name
+      value: Transition
+      objectReference: {fileID: 0}
+    - target: {fileID: 2243209454916702876, guid: 045acfa3267de2641b9e07f22ad8b762,
+        type: 3}
+      propertyPath: sounds.Array.data[6].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 4f30dd46e09237a46b3cc7da1b508b00, type: 3}
+    - target: {fileID: 2243209454916702876, guid: 045acfa3267de2641b9e07f22ad8b762,
+        type: 3}
+      propertyPath: sounds.Array.data[6].loop
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2243209454916702876, guid: 045acfa3267de2641b9e07f22ad8b762,
+        type: 3}
+      propertyPath: sounds.Array.data[6].name
+      value: Charging
+      objectReference: {fileID: 0}
+    - target: {fileID: 2243209454916702876, guid: 045acfa3267de2641b9e07f22ad8b762,
+        type: 3}
+      propertyPath: sounds.Array.data[5].pitch
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2243209454916702876, guid: 045acfa3267de2641b9e07f22ad8b762,
+        type: 3}
+      propertyPath: sounds.Array.data[6].pitch
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2243209454916702876, guid: 045acfa3267de2641b9e07f22ad8b762,
+        type: 3}
+      propertyPath: sounds.Array.data[0].volume
+      value: 0.02
+      objectReference: {fileID: 0}
+    - target: {fileID: 2243209454916702876, guid: 045acfa3267de2641b9e07f22ad8b762,
+        type: 3}
+      propertyPath: sounds.Array.data[1].volume
+      value: 0.02
+      objectReference: {fileID: 0}
+    - target: {fileID: 2243209454916702876, guid: 045acfa3267de2641b9e07f22ad8b762,
+        type: 3}
+      propertyPath: sounds.Array.data[2].volume
+      value: 0.02
+      objectReference: {fileID: 0}
+    - target: {fileID: 2243209454916702876, guid: 045acfa3267de2641b9e07f22ad8b762,
+        type: 3}
+      propertyPath: sounds.Array.data[3].volume
+      value: 0.02
+      objectReference: {fileID: 0}
+    - target: {fileID: 2243209454916702876, guid: 045acfa3267de2641b9e07f22ad8b762,
+        type: 3}
+      propertyPath: sounds.Array.data[4].volume
+      value: 0.02
+      objectReference: {fileID: 0}
+    - target: {fileID: 2243209454916702876, guid: 045acfa3267de2641b9e07f22ad8b762,
+        type: 3}
+      propertyPath: sounds.Array.data[5].volume
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 2243209454916702876, guid: 045acfa3267de2641b9e07f22ad8b762,
+        type: 3}
+      propertyPath: sounds.Array.data[6].volume
+      value: 0.065
+      objectReference: {fileID: 0}
+    - target: {fileID: 6812160603026119175, guid: 045acfa3267de2641b9e07f22ad8b762,
+        type: 3}
+      propertyPath: m_Name
+      value: AudioManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 9192100751697294107, guid: 045acfa3267de2641b9e07f22ad8b762,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9192100751697294107, guid: 045acfa3267de2641b9e07f22ad8b762,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9192100751697294107, guid: 045acfa3267de2641b9e07f22ad8b762,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9192100751697294107, guid: 045acfa3267de2641b9e07f22ad8b762,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9192100751697294107, guid: 045acfa3267de2641b9e07f22ad8b762,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9192100751697294107, guid: 045acfa3267de2641b9e07f22ad8b762,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9192100751697294107, guid: 045acfa3267de2641b9e07f22ad8b762,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9192100751697294107, guid: 045acfa3267de2641b9e07f22ad8b762,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9192100751697294107, guid: 045acfa3267de2641b9e07f22ad8b762,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9192100751697294107, guid: 045acfa3267de2641b9e07f22ad8b762,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 045acfa3267de2641b9e07f22ad8b762, type: 3}
 --- !u!1001 &5441972239580011887
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7443,17 +7534,17 @@ PrefabInstance:
     - target: {fileID: 3855673249793768334, guid: d73485e9c38d2254fa70d1c77431e26f,
         type: 3}
       propertyPath: width
-      value: 3
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 3855673249793768334, guid: d73485e9c38d2254fa70d1c77431e26f,
         type: 3}
       propertyPath: height
-      value: 3
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 3855673249793768334, guid: d73485e9c38d2254fa70d1c77431e26f,
         type: 3}
       propertyPath: airBiome
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3855673249793768334, guid: d73485e9c38d2254fa70d1c77431e26f,
         type: 3}
@@ -7463,12 +7554,12 @@ PrefabInstance:
     - target: {fileID: 3855673249793768334, guid: d73485e9c38d2254fa70d1c77431e26f,
         type: 3}
       propertyPath: earthBiome
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3855673249793768334, guid: d73485e9c38d2254fa70d1c77431e26f,
         type: 3}
       propertyPath: waterBiome
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4295131601132237282, guid: d73485e9c38d2254fa70d1c77431e26f,
         type: 3}
@@ -7788,4 +7879,4 @@ SceneRoots:
   - {fileID: 895272528574857872}
   - {fileID: 4111295923872213913}
   - {fileID: 3655360123787993552}
-  - {fileID: 996681855}
+  - {fileID: 4988686045677518122}

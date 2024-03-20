@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using Audio;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -185,6 +186,7 @@ namespace Player
             else
             {
                 _anim.SetBool(IsCharging, false);
+                AudioManager.instance.Stop("Charging");
             }
             
             if (Input.GetKeyDown(KeyCode.E) && _interactableNpc != null)
@@ -217,6 +219,7 @@ namespace Player
         public void OnChargeMana(InputAction.CallbackContext ctx) // This function is called when the player presses the charge mana button
         {
             _isChargingMana = ctx.control.IsPressed(); // Set _isChargingMana to true if the button is pressed
+            AudioManager.instance.PlayFX("Charging");
         }
     }
 }

@@ -8,8 +8,7 @@ namespace Audio
     {
         public static AudioManager instance;
         public Sound[] sounds;
-        public bool HasEnteredBiome { get; set; } = false;
-        public string _currentBiome = "";
+        private string _currentBiome = "";
         private float _pauseDelay = 0.5f;
         
         private void Awake()
@@ -92,11 +91,7 @@ namespace Audio
         public IEnumerator DelayedPause(string name)
         {
             yield return new WaitForSeconds(_pauseDelay);
-            if (name == _currentBiome && !HasEnteredBiome)
-            {
-                Pause(name);
-                _currentBiome = "";
-            }
+            Pause(name);
         }
 
         public void Unpause(string name)
@@ -107,6 +102,17 @@ namespace Audio
             {
                 sound.source.UnPause();
             }
+        }
+
+        public void Stop(string name)
+        {
+            var sound = Array.Find(sounds, s => s.name == name);
+            
+            if (sound != null)
+            {
+                sound.source.Stop();
+            }
+        
         }
         
         public bool IsPlaying(string name)

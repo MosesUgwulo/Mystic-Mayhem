@@ -107,11 +107,11 @@ GameObject:
   - component: {fileID: 885328772123496934}
   - component: {fileID: 6051006312435982904}
   m_Layer: 6
-  m_Name: Cube
+  m_Name: MusicZone
   m_TagString: Water
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &7813715598413601377
 Transform:
@@ -197,8 +197,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 5, z: 1}
+  m_Center: {x: 0, y: 2, z: 0}
 --- !u!114 &6051006312435982904
 MonoBehaviour:
   m_ObjectHideFlags: 0

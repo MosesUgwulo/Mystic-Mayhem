@@ -400,11 +400,11 @@ GameObject:
   - component: {fileID: 1269749469661398083}
   - component: {fileID: 6239165249600276908}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: MusicZone
   m_TagString: Fire
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &2999398741443682218
 Transform:
@@ -490,8 +490,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 5, z: 1}
+  m_Center: {x: 0, y: 2, z: 0}
 --- !u!114 &6239165249600276908
 MonoBehaviour:
   m_ObjectHideFlags: 0
