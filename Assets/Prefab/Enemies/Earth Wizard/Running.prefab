@@ -1571,7 +1571,7 @@ MonoBehaviour:
   - {fileID: 0}
   elementType: 2
   health: 250
-  walkSpeed: 8
+  walkSpeed: 4
   castingPoint: {fileID: 8747451632481223223}
   player: {fileID: 0}
   groundMask:
@@ -1594,7 +1594,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 8
+  m_Speed: 4
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -1603,7 +1603,7 @@ NavMeshAgent:
   m_AutoBraking: 1
   m_AutoRepath: 1
   m_Height: 2
-  m_BaseOffset: 0
+  m_BaseOffset: -0.04
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
 --- !u!1 &6961000181820379007

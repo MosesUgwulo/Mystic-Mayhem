@@ -46,35 +46,49 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sounds:
   - name: Fire
-    clip: {fileID: 8300000, guid: a9ea6d754c46cdc419e5b5a1a3ccd8ca, type: 3}
-    volume: 0.05
+    clip: {fileID: 8300000, guid: 4fab354e4b3ed2048ac86d8a5e42ebb8, type: 3}
+    volume: 0.02
     pitch: 1
     loop: 1
     playOnAwake: 0
     source: {fileID: 0}
   - name: Water
-    clip: {fileID: 8300000, guid: e68cf2bd47bbea74fac69d39dc241b7f, type: 3}
-    volume: 0.05
+    clip: {fileID: 8300000, guid: adcfe9da60421c24f840e894912f20f8, type: 3}
+    volume: 0.02
     pitch: 1
     loop: 1
     playOnAwake: 0
     source: {fileID: 0}
   - name: Earth
     clip: {fileID: 8300000, guid: ab31c0b2767150e4baf34f402628649d, type: 3}
-    volume: 0.05
+    volume: 0.02
     pitch: 1
     loop: 1
     playOnAwake: 0
     source: {fileID: 0}
   - name: Air
     clip: {fileID: 8300000, guid: e08a181327d05a547a48edf1bfe9f26b, type: 3}
-    volume: 0.05
+    volume: 0.02
     pitch: 1
     loop: 1
     playOnAwake: 0
     source: {fileID: 0}
   - name: Village
     clip: {fileID: 8300000, guid: fcdb94dada3ba0449a7ba66b27a41adc, type: 3}
+    volume: 0.02
+    pitch: 1
+    loop: 1
+    playOnAwake: 0
+    source: {fileID: 0}
+  - name: Transition
+    clip: {fileID: 8300000, guid: e62444ff6dc6335438d864c75c84dc37, type: 3}
+    volume: 0
+    pitch: 1
+    loop: 0
+    playOnAwake: 0
+    source: {fileID: 0}
+  - name: Charging
+    clip: {fileID: 8300000, guid: 4f30dd46e09237a46b3cc7da1b508b00, type: 3}
     volume: 0.05
     pitch: 1
     loop: 1

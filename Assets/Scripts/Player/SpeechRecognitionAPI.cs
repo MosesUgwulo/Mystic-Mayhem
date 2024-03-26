@@ -14,7 +14,7 @@ namespace Player
     public class SpeechRecognitionAPI : MonoBehaviour
     {
         public TMP_Dropdown micDropdown;
-        [FormerlySerializedAs("_anim")] public Animator anim;
+        public Animator anim;
         private AudioClip _audioClip;
         private byte[] _bytes;
         private bool _isRecording;

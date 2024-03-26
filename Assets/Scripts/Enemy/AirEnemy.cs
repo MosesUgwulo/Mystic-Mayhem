@@ -32,7 +32,7 @@ namespace Enemy
             var position = transform.position;
             patrolTarget = new Vector3(position.x + randomX, position.y, position.z + randomZ);
 
-            if (Physics.Raycast(patrolTarget, -transform.up, 2f, groundMask)) // Make sure the target is on the ground and not in the air
+            if (Physics.Raycast(patrolTarget, -transform.up, 2f, groundMask) && NavMesh.SamplePosition(patrolTarget, out _, 2f, NavMesh.AllAreas)) // Make sure the target is on the ground and not in the air
             {
                 isPatrolTargetSet = true;
             }
@@ -43,6 +43,7 @@ namespace Enemy
             if (!isPatrolTargetSet) SetPatrolTarget();
             
             if (isPatrolTargetSet) agent.SetDestination(patrolTarget);
+            agent.speed = walkSpeed;
             
             var distance = transform.position - patrolTarget;
 
@@ -52,6 +53,7 @@ namespace Enemy
         public override void Chasing()
         {
             agent.SetDestination(player.position);
+            agent.speed = walkSpeed * 2;
         }
 
         public override void Attack()

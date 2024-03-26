@@ -419,18 +419,6 @@ MonoBehaviour:
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
   m_SoftShadowQuality: 1
---- !u!114 &481727594 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6979540651965601272, guid: 6af12493df031e7498cd040d5e8a019e,
-    type: 3}
-  m_PrefabInstance: {fileID: 6132409461854215528}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7b743370ac3e4ec2a1668f5455a8ef8a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &604929372 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3542556645988654043, guid: 3bc324138da9e27449b5100679c3e468,
@@ -6495,18 +6483,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 863340058}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1108157379 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 124237376718794281, guid: 6af12493df031e7498cd040d5e8a019e,
-    type: 3}
-  m_PrefabInstance: {fileID: 6132409461854215528}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!95 &1444590811 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 8777305320458985453, guid: f4f2b71b1e7e4b94db8857e68c109e90,
@@ -6605,11 +6581,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Fire Wizard
-      objectReference: {fileID: 0}
-    - target: {fileID: 3570805347867676246, guid: 6f11f57b78413ad4da0b92000fd7d355,
-        type: 3}
-      propertyPath: m_Constraints
-      value: 80
       objectReference: {fileID: 0}
     - target: {fileID: 8541854746273924513, guid: 6f11f57b78413ad4da0b92000fd7d355,
         type: 3}
@@ -7152,96 +7123,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2243209454916702876, guid: 045acfa3267de2641b9e07f22ad8b762,
-        type: 3}
-      propertyPath: sounds.Array.size
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 2243209454916702876, guid: 045acfa3267de2641b9e07f22ad8b762,
-        type: 3}
-      propertyPath: sounds.Array.data[0].clip
-      value: 
-      objectReference: {fileID: 8300000, guid: 4fab354e4b3ed2048ac86d8a5e42ebb8, type: 3}
-    - target: {fileID: 2243209454916702876, guid: 045acfa3267de2641b9e07f22ad8b762,
-        type: 3}
-      propertyPath: sounds.Array.data[1].clip
-      value: 
-      objectReference: {fileID: 8300000, guid: adcfe9da60421c24f840e894912f20f8, type: 3}
-    - target: {fileID: 2243209454916702876, guid: 045acfa3267de2641b9e07f22ad8b762,
-        type: 3}
-      propertyPath: sounds.Array.data[5].clip
-      value: 
-      objectReference: {fileID: 8300000, guid: e62444ff6dc6335438d864c75c84dc37, type: 3}
-    - target: {fileID: 2243209454916702876, guid: 045acfa3267de2641b9e07f22ad8b762,
-        type: 3}
-      propertyPath: sounds.Array.data[5].loop
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2243209454916702876, guid: 045acfa3267de2641b9e07f22ad8b762,
-        type: 3}
-      propertyPath: sounds.Array.data[5].name
-      value: Transition
-      objectReference: {fileID: 0}
-    - target: {fileID: 2243209454916702876, guid: 045acfa3267de2641b9e07f22ad8b762,
-        type: 3}
-      propertyPath: sounds.Array.data[6].clip
-      value: 
-      objectReference: {fileID: 8300000, guid: 4f30dd46e09237a46b3cc7da1b508b00, type: 3}
-    - target: {fileID: 2243209454916702876, guid: 045acfa3267de2641b9e07f22ad8b762,
-        type: 3}
-      propertyPath: sounds.Array.data[6].loop
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2243209454916702876, guid: 045acfa3267de2641b9e07f22ad8b762,
-        type: 3}
-      propertyPath: sounds.Array.data[6].name
-      value: Charging
-      objectReference: {fileID: 0}
-    - target: {fileID: 2243209454916702876, guid: 045acfa3267de2641b9e07f22ad8b762,
-        type: 3}
-      propertyPath: sounds.Array.data[5].pitch
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2243209454916702876, guid: 045acfa3267de2641b9e07f22ad8b762,
-        type: 3}
-      propertyPath: sounds.Array.data[6].pitch
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2243209454916702876, guid: 045acfa3267de2641b9e07f22ad8b762,
-        type: 3}
-      propertyPath: sounds.Array.data[0].volume
-      value: 0.02
-      objectReference: {fileID: 0}
-    - target: {fileID: 2243209454916702876, guid: 045acfa3267de2641b9e07f22ad8b762,
-        type: 3}
-      propertyPath: sounds.Array.data[1].volume
-      value: 0.02
-      objectReference: {fileID: 0}
-    - target: {fileID: 2243209454916702876, guid: 045acfa3267de2641b9e07f22ad8b762,
-        type: 3}
-      propertyPath: sounds.Array.data[2].volume
-      value: 0.02
-      objectReference: {fileID: 0}
-    - target: {fileID: 2243209454916702876, guid: 045acfa3267de2641b9e07f22ad8b762,
-        type: 3}
-      propertyPath: sounds.Array.data[3].volume
-      value: 0.02
-      objectReference: {fileID: 0}
-    - target: {fileID: 2243209454916702876, guid: 045acfa3267de2641b9e07f22ad8b762,
-        type: 3}
-      propertyPath: sounds.Array.data[4].volume
-      value: 0.02
-      objectReference: {fileID: 0}
-    - target: {fileID: 2243209454916702876, guid: 045acfa3267de2641b9e07f22ad8b762,
-        type: 3}
-      propertyPath: sounds.Array.data[5].volume
-      value: 0.05
-      objectReference: {fileID: 0}
-    - target: {fileID: 2243209454916702876, guid: 045acfa3267de2641b9e07f22ad8b762,
-        type: 3}
-      propertyPath: sounds.Array.data[6].volume
-      value: 0.065
-      objectReference: {fileID: 0}
     - target: {fileID: 6812160603026119175, guid: 045acfa3267de2641b9e07f22ad8b762,
         type: 3}
       propertyPath: m_Name
@@ -7418,6 +7299,16 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6695413560955979076, guid: 6af12493df031e7498cd040d5e8a019e,
+        type: 3}
+      propertyPath: m_text
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6979540651965601272, guid: 6af12493df031e7498cd040d5e8a019e,
+        type: 3}
+      propertyPath: m_Options.m_Options.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8527251008178276835, guid: 6af12493df031e7498cd040d5e8a019e,
         type: 3}
       propertyPath: m_Pivot.x
@@ -7519,7 +7410,8 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 1512108881004436533, guid: 6af12493df031e7498cd040d5e8a019e, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6af12493df031e7498cd040d5e8a019e, type: 3}
@@ -7738,7 +7630,7 @@ PrefabInstance:
         type: 3}
       propertyPath: micDropdown
       value: 
-      objectReference: {fileID: 481727594}
+      objectReference: {fileID: 0}
     - target: {fileID: 6360068299854136629, guid: 476ceee4f5e1457489f54cfb21671d1a,
         type: 3}
       propertyPath: magicSystem
@@ -7748,12 +7640,12 @@ PrefabInstance:
         type: 3}
       propertyPath: textMeshPro
       value: 
-      objectReference: {fileID: 1108157379}
+      objectReference: {fileID: 0}
     - target: {fileID: 6360068299854136629, guid: 476ceee4f5e1457489f54cfb21671d1a,
         type: 3}
       propertyPath: connectedText
       value: 
-      objectReference: {fileID: 1108157379}
+      objectReference: {fileID: 0}
     - target: {fileID: 6932450355338773108, guid: 476ceee4f5e1457489f54cfb21671d1a,
         type: 3}
       propertyPath: m_Name
@@ -7867,16 +7759,16 @@ SceneRoots:
   - {fileID: 863340058}
   - {fileID: 6132409461854215528}
   - {fileID: 764667177}
-  - {fileID: 7138326497989816409}
   - {fileID: 6226128347938211576}
   - {fileID: 5441972239580011887}
   - {fileID: 1082452517910576920}
   - {fileID: 323939257226125206}
   - {fileID: 4306929556305948852}
-  - {fileID: 2382390116799621411}
   - {fileID: 8489054528017797683}
   - {fileID: 4724292226366784008}
   - {fileID: 895272528574857872}
   - {fileID: 4111295923872213913}
   - {fileID: 3655360123787993552}
   - {fileID: 4988686045677518122}
+  - {fileID: 2382390116799621411}
+  - {fileID: 7138326497989816409}

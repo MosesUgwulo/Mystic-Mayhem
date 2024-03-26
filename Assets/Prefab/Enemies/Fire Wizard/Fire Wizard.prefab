@@ -532,7 +532,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 1
   m_Interpolate: 0
-  m_Constraints: 48
+  m_Constraints: 80
   m_CollisionDetection: 0
 --- !u!136 &3079005227539372760
 CapsuleCollider:
@@ -573,7 +573,7 @@ MonoBehaviour:
   - {fileID: 0}
   elementType: 0
   health: 100
-  walkSpeed: 8
+  walkSpeed: 4
   castingPoint: {fileID: 7490344888057103584}
   player: {fileID: 0}
   groundMask:
@@ -605,7 +605,7 @@ NavMeshAgent:
   m_AutoBraking: 1
   m_AutoRepath: 1
   m_Height: 2
-  m_BaseOffset: 0
+  m_BaseOffset: -0.04
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
 --- !u!1 &2823159722036403294

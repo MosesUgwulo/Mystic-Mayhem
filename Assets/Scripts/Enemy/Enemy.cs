@@ -19,10 +19,7 @@ namespace Enemy
         protected NavMeshAgent agent;
         protected static readonly int IsPatrolling = Animator.StringToHash("IsPatrolling");
         protected static readonly int CanSee = Animator.StringToHash("CanSee");
-        protected static readonly int CastingSpellT = Animator.StringToHash("CastingSpellT");
         protected static readonly int CastingSpellB = Animator.StringToHash("CastingSpellB");
-        protected static readonly int Cooldown = Animator.StringToHash("Cooldown");
-        protected static readonly int IsCasting = Animator.StringToHash("IsCasting");
         protected static readonly int IsChasing = Animator.StringToHash("IsChasing");
         
         // Patrolling Variables

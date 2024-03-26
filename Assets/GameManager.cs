@@ -19,7 +19,6 @@ public class GameManager : MonoBehaviour
     public SpeechRecognitionAPI speechRecognitionAPI;
     public MagicSystem magicSystem;
     public GameObject player;
-    public TMP_Text connectedText;
     private float _timer;
     private float _timeToPing = 30f;
     private void Awake()
@@ -56,7 +55,6 @@ public class GameManager : MonoBehaviour
             speechRecognition.enabled = true;
         }
         
-        connectedText.text = IsInternetConnected() ? "Connected" : "Not Connected";
     }
 
     private static bool IsInternetConnected()
@@ -96,13 +94,11 @@ public class GameManager : MonoBehaviour
             {
                 speechRecognitionAPI.enabled = true;
                 speechRecognition.enabled = false;
-                connectedText.text = "Connected";
             }
             else
             {
                 speechRecognitionAPI.enabled = false;
                 speechRecognition.enabled = true;
-                connectedText.text = "Not Connected";
             }
         }
         
