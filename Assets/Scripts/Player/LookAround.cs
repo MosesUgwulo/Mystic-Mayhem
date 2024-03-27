@@ -15,7 +15,11 @@ namespace Player
         {
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
+            
+            mouseSensitivityX = PlayerPrefs.GetFloat("SensitivityX", 300f);
+            mouseSensitivityY = PlayerPrefs.GetFloat("SensitivityY", 300f);
         }
+        
         
         private void Update()
         {

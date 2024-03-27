@@ -2,30 +2,36 @@ using System;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Audio;
 
 namespace Main_Menu
 {
     public class OptionsMenu : MonoBehaviour
     {
-        public TMP_Dropdown micDropdown;
-
-        private void Awake()
-        {
-            micDropdown = GameObject.Find("Dropdown").GetComponent<TMP_Dropdown>();
-        }
+        public AudioMixer audioMixer;
 
         void Start()
         {
-            PopulateMicDropdown();
+            float savedVolume = PlayerPrefs.GetFloat("Volume", 0.5f);
+            SetVolume(savedVolume);
+            float savedSensitivity = PlayerPrefs.GetFloat("SensitivityX", 300f);
+            SetSensitivity(savedSensitivity);
         }
-
-        private void PopulateMicDropdown()
+        
+        public void SetSensitivity(float sensitivity)
         {
-            List<string> micOptions = new List<string>(Microphone.devices);
-            micDropdown.ClearOptions();
-            micDropdown.AddOptions(micOptions);
+            PlayerPrefs.SetFloat("SensitivityX", sensitivity);
+            PlayerPrefs.SetFloat("SensitivityY", sensitivity);
+            PlayerPrefs.Save();
         }
-
+        
+        public void SetVolume(float volume)
+        {
+            audioMixer.SetFloat("Volume", Mathf.Log10(volume) * 20);
+            PlayerPrefs.SetFloat("Volume", volume);
+            PlayerPrefs.Save();
+        }
+        
         void Update()
         {
         

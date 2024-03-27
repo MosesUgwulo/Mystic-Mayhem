@@ -31,6 +31,8 @@ namespace Audio
                 sound.source.pitch = sound.pitch;
                 sound.source.loop = sound.loop;
                 sound.source.playOnAwake = sound.playOnAwake;
+                
+                sound.source.outputAudioMixerGroup = sound.audioMixerGroup;
             }
         }
 

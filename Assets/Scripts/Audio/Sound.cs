@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Audio;
 
 namespace Audio
 {
@@ -18,5 +19,7 @@ namespace Audio
         
         [HideInInspector]
         public AudioSource source;
+        
+        public AudioMixerGroup audioMixerGroup;
     }
 }
