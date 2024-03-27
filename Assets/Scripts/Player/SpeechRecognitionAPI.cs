@@ -35,6 +35,25 @@ namespace Player
         void Start()
         {
             PopulateMicDropdown();
+            LoadMicSelection();
+        }
+
+        private void LoadMicSelection()
+        {
+            string selectedMic = PlayerPrefs.GetString("SelectedMic", "");
+            if (!string.IsNullOrEmpty(selectedMic) && micDropdown.options.Any(option => option.text == selectedMic))
+            {
+                micDropdown.value = micDropdown.options.FindIndex(option => option.text == selectedMic);
+            }
+        }
+
+        private void SaveMicSelection()
+        {
+            if (micDropdown.options.Count > 0)
+            {
+                PlayerPrefs.SetString("SelectedMic", micDropdown.options[micDropdown.value].text);
+                PlayerPrefs.Save();
+            }
         }
 
         private void PopulateMicDropdown()
@@ -42,6 +61,7 @@ namespace Player
             List<string> micOptions = new List<string>(Microphone.devices);
             micDropdown.ClearOptions();
             micDropdown.AddOptions(micOptions);
+            micDropdown.onValueChanged.AddListener(delegate { SaveMicSelection(); });
         }
 
         void Update()
@@ -94,8 +114,6 @@ namespace Player
                 string cleanedResponse = response.StripPunctuation().ToLower();
                 Debug.Log("'" + cleanedResponse + "'");
             
-                LogResponseToFile(cleanedResponse);
-            
                 // var spell = _spells.FirstOrDefault(s => s.phrases.Any(p => p.ToLower() == cleanedResponse) && !s.isEnemySpell);
                 var spell = _spells.FirstOrDefault(s => s.phrases.Any(p => cleanedResponse.Contains(p.ToLower())) && !s.isEnemySpell);
             
@@ -138,27 +156,6 @@ namespace Player
                 return memoryStream.ToArray();
             }
         }
-
-        private void SpeechFolderExists()
-        {
-            string folderpath = Path.Combine(Directory.GetCurrentDirectory(), "Speech");
-            if (!Directory.Exists(folderpath))
-            {
-                Directory.CreateDirectory(folderpath);
-                Debug.Log("Speech folder created at: " + folderpath);
-            }
-        }
-
-        private void LogResponseToFile(string response)
-        {
-            SpeechFolderExists();
-            string folderPath = Path.Combine(Directory.GetCurrentDirectory(), "Speech");
-            string filePath = Path.Combine(folderPath, "response.txt");
-
-            using StreamWriter writer = File.AppendText(filePath);
-            writer.WriteLine($"[{DateTime.Now}] {response}");
-        }
-    
     }
 
     public static class StringExtension

@@ -3,19 +3,24 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Audio;
+using UnityEngine.UI;
 
 namespace Main_Menu
 {
     public class OptionsMenu : MonoBehaviour
     {
         public AudioMixer audioMixer;
+        public Slider volumeSlider;
+        public Slider sensitivitySlider;
 
         void Start()
         {
             float savedVolume = PlayerPrefs.GetFloat("Volume", 0.5f);
             SetVolume(savedVolume);
+            volumeSlider.value = savedVolume;
             float savedSensitivity = PlayerPrefs.GetFloat("SensitivityX", 300f);
             SetSensitivity(savedSensitivity);
+            sensitivitySlider.value = savedSensitivity;
         }
         
         public void SetSensitivity(float sensitivity)

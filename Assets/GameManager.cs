@@ -101,10 +101,5 @@ public class GameManager : MonoBehaviour
                 speechRecognition.enabled = true;
             }
         }
-        
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            Application.Quit();
-        }
     }
 }

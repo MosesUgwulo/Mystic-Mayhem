@@ -15,14 +15,14 @@ namespace Player
         {
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
-            
-            mouseSensitivityX = PlayerPrefs.GetFloat("SensitivityX", 300f);
-            mouseSensitivityY = PlayerPrefs.GetFloat("SensitivityY", 300f);
         }
         
         
         private void Update()
         {
+            mouseSensitivityX = PlayerPrefs.GetFloat("SensitivityX", 300f);
+            mouseSensitivityY = PlayerPrefs.GetFloat("SensitivityY", 300f);
+            
             // Get mouse input
             var mouseX = Input.GetAxis("Mouse X") * (mouseSensitivityX * Time.deltaTime);
             var mouseY = Input.GetAxis("Mouse Y") * (mouseSensitivityY * Time.deltaTime);
